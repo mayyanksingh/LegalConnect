@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/frontend/index.html" },
+    { "source": "/index.html", "destination": "/frontend/index.html" },
+    { "source": "/citizen", "destination": "/frontend/citizen.html" },
+    { "source": "/citizen.html", "destination": "/frontend/citizen.html" },
+    { "source": "/lawyer-auth", "destination": "/frontend/lawyer-auth.html" },
+    { "source": "/lawyer-auth.html", "destination": "/frontend/lawyer-auth.html" },
+    { "source": "/lawyer-dashboard", "destination": "/frontend/lawyer-dashboard.html" },
+    { "source": "/lawyer-dashboard.html", "destination": "/frontend/lawyer-dashboard.html" },
+    { "source": "/css/:path*", "destination": "/frontend/css/:path*" },
+    { "source": "/js/:path*", "destination": "/frontend/js/:path*" },
+    { "source": "/assets/:path*", "destination": "/frontend/assets/:path*" }
+  ]
+}

@@ -334,47 +334,75 @@ const INITIAL_DATA = {
 // Store Helper API
 const LegalStore = {
   init() {
-    if (!localStorage.getItem(STORAGE_KEYS.CASES)) {
-      this.resetToDemo();
+    try {
+      if (!localStorage.getItem(STORAGE_KEYS.CASES)) {
+        this.resetToDemo();
+      }
+    } catch (e) {
+      console.warn('Storage unavailable or access denied:', e);
     }
   },
 
   resetToDemo() {
-    localStorage.setItem(STORAGE_KEYS.AUTH_LAWYER, JSON.stringify(INITIAL_DATA.lawyer));
-    localStorage.setItem(STORAGE_KEYS.CASES, JSON.stringify(INITIAL_DATA.cases));
-    localStorage.setItem(STORAGE_KEYS.CLIENTS, JSON.stringify(INITIAL_DATA.clients));
-    localStorage.setItem(STORAGE_KEYS.HEARINGS, JSON.stringify(INITIAL_DATA.hearings));
-    localStorage.setItem(STORAGE_KEYS.DOCUMENTS, JSON.stringify(INITIAL_DATA.documents));
-    localStorage.setItem(STORAGE_KEYS.NOTIFICATIONS, JSON.stringify(INITIAL_DATA.notifications));
+    try {
+      localStorage.setItem(STORAGE_KEYS.AUTH_LAWYER, JSON.stringify(INITIAL_DATA.lawyer));
+      localStorage.setItem(STORAGE_KEYS.CASES, JSON.stringify(INITIAL_DATA.cases));
+      localStorage.setItem(STORAGE_KEYS.CLIENTS, JSON.stringify(INITIAL_DATA.clients));
+      localStorage.setItem(STORAGE_KEYS.HEARINGS, JSON.stringify(INITIAL_DATA.hearings));
+      localStorage.setItem(STORAGE_KEYS.DOCUMENTS, JSON.stringify(INITIAL_DATA.documents));
+      localStorage.setItem(STORAGE_KEYS.NOTIFICATIONS, JSON.stringify(INITIAL_DATA.notifications));
+    } catch (e) {
+      console.warn('Storage reset write failed:', e);
+    }
   },
 
   // Auth
   getLawyer() {
-    const raw = localStorage.getItem(STORAGE_KEYS.AUTH_LAWYER);
-    return raw ? JSON.parse(raw) : INITIAL_DATA.lawyer;
+    try {
+      const raw = localStorage.getItem(STORAGE_KEYS.AUTH_LAWYER);
+      return raw ? JSON.parse(raw) : INITIAL_DATA.lawyer;
+    } catch (e) {
+      return INITIAL_DATA.lawyer;
+    }
   },
 
   saveLawyer(profile) {
-    localStorage.setItem(STORAGE_KEYS.AUTH_LAWYER, JSON.stringify(profile));
+    try {
+      localStorage.setItem(STORAGE_KEYS.AUTH_LAWYER, JSON.stringify(profile));
+    } catch (e) {
+      console.warn('Storage save failed:', e);
+    }
   },
 
   isLawyerLoggedIn() {
-    return localStorage.getItem('lc_is_logged_in') === 'true';
+    try {
+      return localStorage.getItem('lc_is_logged_in') === 'true';
+    } catch (e) {
+      return true; // Fallback for prototype preview
+    }
   },
 
   loginLawyer(profile) {
-    localStorage.setItem('lc_is_logged_in', 'true');
+    try {
+      localStorage.setItem('lc_is_logged_in', 'true');
+    } catch (e) {}
     if (profile) this.saveLawyer(profile);
   },
 
   logoutLawyer() {
-    localStorage.removeItem('lc_is_logged_in');
+    try {
+      localStorage.removeItem('lc_is_logged_in');
+    } catch (e) {}
   },
 
   // Cases
   getCases() {
-    const raw = localStorage.getItem(STORAGE_KEYS.CASES);
-    return raw ? JSON.parse(raw) : [];
+    try {
+      const raw = localStorage.getItem(STORAGE_KEYS.CASES);
+      return raw ? JSON.parse(raw) : INITIAL_DATA.cases;
+    } catch (e) {
+      return INITIAL_DATA.cases;
+    }
   },
 
   getCaseById(id) {
@@ -385,26 +413,36 @@ const LegalStore = {
     const cases = this.getCases();
     if (!newCase.id) newCase.id = 'cas-' + Date.now();
     cases.unshift(newCase);
-    localStorage.setItem(STORAGE_KEYS.CASES, JSON.stringify(cases));
+    try {
+      localStorage.setItem(STORAGE_KEYS.CASES, JSON.stringify(cases));
+    } catch (e) {}
     return newCase;
   },
 
   updateCase(updatedCase) {
     let cases = this.getCases();
     cases = cases.map(c => c.id === updatedCase.id ? updatedCase : c);
-    localStorage.setItem(STORAGE_KEYS.CASES, JSON.stringify(cases));
+    try {
+      localStorage.setItem(STORAGE_KEYS.CASES, JSON.stringify(cases));
+    } catch (e) {}
   },
 
   deleteCase(id) {
     let cases = this.getCases();
     cases = cases.filter(c => c.id !== id);
-    localStorage.setItem(STORAGE_KEYS.CASES, JSON.stringify(cases));
+    try {
+      localStorage.setItem(STORAGE_KEYS.CASES, JSON.stringify(cases));
+    } catch (e) {}
   },
 
   // Clients
   getClients() {
-    const raw = localStorage.getItem(STORAGE_KEYS.CLIENTS);
-    return raw ? JSON.parse(raw) : [];
+    try {
+      const raw = localStorage.getItem(STORAGE_KEYS.CLIENTS);
+      return raw ? JSON.parse(raw) : INITIAL_DATA.clients;
+    } catch (e) {
+      return INITIAL_DATA.clients;
+    }
   },
 
   saveClient(newClient) {
@@ -412,65 +450,91 @@ const LegalStore = {
     if (!newClient.id) newClient.id = 'cli-' + Date.now();
     if (!newClient.createdDate) newClient.createdDate = new Date().toISOString().split('T')[0];
     clients.unshift(newClient);
-    localStorage.setItem(STORAGE_KEYS.CLIENTS, JSON.stringify(clients));
+    try {
+      localStorage.setItem(STORAGE_KEYS.CLIENTS, JSON.stringify(clients));
+    } catch (e) {}
     return newClient;
   },
 
   updateClient(updatedClient) {
     let clients = this.getClients();
     clients = clients.map(c => c.id === updatedClient.id ? updatedClient : c);
-    localStorage.setItem(STORAGE_KEYS.CLIENTS, JSON.stringify(clients));
+    try {
+      localStorage.setItem(STORAGE_KEYS.CLIENTS, JSON.stringify(clients));
+    } catch (e) {}
   },
 
   deleteClient(id) {
     let clients = this.getClients();
     clients = clients.filter(c => c.id !== id);
-    localStorage.setItem(STORAGE_KEYS.CLIENTS, JSON.stringify(clients));
+    try {
+      localStorage.setItem(STORAGE_KEYS.CLIENTS, JSON.stringify(clients));
+    } catch (e) {}
   },
 
   // Hearings
   getHearings() {
-    const raw = localStorage.getItem(STORAGE_KEYS.HEARINGS);
-    return raw ? JSON.parse(raw) : [];
+    try {
+      const raw = localStorage.getItem(STORAGE_KEYS.HEARINGS);
+      return raw ? JSON.parse(raw) : INITIAL_DATA.hearings;
+    } catch (e) {
+      return INITIAL_DATA.hearings;
+    }
   },
 
   saveHearing(newHearing) {
     const hearings = this.getHearings();
     if (!newHearing.id) newHearing.id = 'hrg-' + Date.now();
     hearings.push(newHearing);
-    localStorage.setItem(STORAGE_KEYS.HEARINGS, JSON.stringify(hearings));
+    try {
+      localStorage.setItem(STORAGE_KEYS.HEARINGS, JSON.stringify(hearings));
+    } catch (e) {}
     return newHearing;
   },
 
   // Documents
   getDocuments() {
-    const raw = localStorage.getItem(STORAGE_KEYS.DOCUMENTS);
-    return raw ? JSON.parse(raw) : [];
+    try {
+      const raw = localStorage.getItem(STORAGE_KEYS.DOCUMENTS);
+      return raw ? JSON.parse(raw) : INITIAL_DATA.documents;
+    } catch (e) {
+      return INITIAL_DATA.documents;
+    }
   },
 
   saveDocument(newDoc) {
     const docs = this.getDocuments();
     if (!newDoc.id) newDoc.id = 'doc-' + Date.now();
     docs.unshift(newDoc);
-    localStorage.setItem(STORAGE_KEYS.DOCUMENTS, JSON.stringify(docs));
+    try {
+      localStorage.setItem(STORAGE_KEYS.DOCUMENTS, JSON.stringify(docs));
+    } catch (e) {}
     return newDoc;
   },
 
   deleteDocument(id) {
     let docs = this.getDocuments();
     docs = docs.filter(d => d.id !== id);
-    localStorage.setItem(STORAGE_KEYS.DOCUMENTS, JSON.stringify(docs));
+    try {
+      localStorage.setItem(STORAGE_KEYS.DOCUMENTS, JSON.stringify(docs));
+    } catch (e) {}
   },
 
   // Notifications
   getNotifications() {
-    const raw = localStorage.getItem(STORAGE_KEYS.NOTIFICATIONS);
-    return raw ? JSON.parse(raw) : [];
+    try {
+      const raw = localStorage.getItem(STORAGE_KEYS.NOTIFICATIONS);
+      return raw ? JSON.parse(raw) : INITIAL_DATA.notifications;
+    } catch (e) {
+      return INITIAL_DATA.notifications;
+    }
   },
 
   markAllNotificationsRead() {
     const notifs = this.getNotifications().map(n => ({ ...n, read: true }));
-    localStorage.setItem(STORAGE_KEYS.NOTIFICATIONS, JSON.stringify(notifs));
+    try {
+      localStorage.setItem(STORAGE_KEYS.NOTIFICATIONS, JSON.stringify(notifs));
+    } catch (e) {}
   }
 };
 

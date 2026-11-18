@@ -95,11 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeCases = cases.filter(c => c.caseStatus === 'Active' || c.caseStatus === 'Listed');
     const deadlines = hearings.filter(h => h.type === 'Filing Deadline');
 
-    document.getElementById('statTotalCases').textContent = cases.length;
-    document.getElementById('statActiveCases').textContent = activeCases.length;
-    document.getElementById('statTotalClients').textContent = clients.length;
-    document.getElementById('statUpcomingHearings').textContent = hearings.length;
-    document.getElementById('statPendingDeadlines').textContent = deadlines.length;
+    const setTxt = (id, val) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = val;
+    };
+
+    setTxt('statTotalCases', cases.length);
+    setTxt('statActiveCases', activeCases.length);
+    setTxt('statTotalClients', clients.length);
+    setTxt('statUpcomingHearings', hearings.length);
+    setTxt('statPendingDeadlines', deadlines.length);
 
     // Cause List Table
     const causeListBody = document.getElementById('todayCauseListBody');
@@ -894,31 +899,22 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderAdvocateProfile(profile) {
     if (!profile) return;
 
-    // Top Bar & Sidebar Profile Badges
-    const navAdvocateName = document.getElementById('topAdvocateName');
-    const sideAdvocateName = document.getElementById('sideAdvocateName');
-    const sideBarId = document.getElementById('sideBarId');
+    const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val; };
 
-    if (navAdvocateName) navAdvocateName.textContent = profile.name;
-    if (sideAdvocateName) sideAdvocateName.textContent = profile.name;
-    if (sideBarId) sideBarId.textContent = `Bar ID: ${profile.barId} [DEMO]`;
+    // Top Bar & Sidebar Profile Badges
+    setTxt('topAdvocateName', profile.name);
+    setTxt('sideAdvocateName', profile.name);
+    setTxt('sideBarId', `Bar ID: ${profile.barId} [DEMO]`);
 
     // Profile Settings Form Fields
-    const profName = document.getElementById('profName');
-    const profEmail = document.getElementById('profEmail');
-    const profPhone = document.getElementById('profPhone');
-    const profBarId = document.getElementById('profBarId');
-    const profCouncil = document.getElementById('profCouncil');
-    const profChamber = document.getElementById('profChamber');
-    const profPrimaryCourt = document.getElementById('profPrimaryCourt');
-
-    if (profName) profName.value = profile.name;
-    if (profEmail) profEmail.value = profile.email;
-    if (profPhone) profPhone.value = profile.phone || '+91 98110 45210';
-    if (profBarId) profBarId.value = profile.barId;
-    if (profCouncil) profCouncil.value = profile.barCouncil || 'Bar Council of Delhi';
-    if (profChamber) profChamber.value = profile.chamber || 'Chamber 418, Delhi HC';
-    if (profPrimaryCourt) profPrimaryCourt.value = profile.primaryCourt || 'High Court of Delhi';
+    setVal('profName', profile.name);
+    setVal('profEmail', profile.email);
+    setVal('profPhone', profile.phone || '+91 98110 45210');
+    setVal('profBarId', profile.barId);
+    setVal('profCouncil', profile.barCouncil || 'Bar Council of Delhi');
+    setVal('profChamber', profile.chamber || 'Chamber 418, Delhi HC');
+    setVal('profPrimaryCourt', profile.primaryCourt || 'High Court of Delhi');
   }
 
   // Save Profile Form
