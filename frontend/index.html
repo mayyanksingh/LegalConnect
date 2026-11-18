@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LegalConnect - AI-Powered Legal Practice Management & Assistance System tailored for Indian Advocates, Law Chambers, and Citizens.">
+  <title>LegalConnect | AI-Powered Legal Practice Management & Assistance Platform</title>
+
+  <!-- Google Fonts: Cinzel & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons (Production CDN) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet & Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Navigation Bar
+       ======================================================================== -->
+  <header class="navbar" role="banner">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" aria-label="LegalConnect Home">
+        <div class="brand-emblem" aria-hidden="true">
+          <i data-lucide="scale"></i>
+        </div>
+        <span>Legal<span class="accent">Connect</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" role="navigation" aria-label="Main Navigation">
+        <a href="#role-selection" class="nav-link active">Portals</a>
+        <a href="#home" class="nav-link">Overview</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#why-choose-us" class="nav-link">Why Choose Us</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Desktop CTA Action -->
+      <div class="nav-actions">
+        <a href="citizen.html" class="btn btn-outline btn-sm">
+          <i data-lucide="user"></i>
+          <span>Citizen Portal</span>
+        </a>
+        <a href="lawyer-auth.html" class="btn btn-primary btn-sm">
+          <i data-lucide="briefcase"></i>
+          <span>Lawyer Login</span>
+        </a>
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-toggle" aria-label="Open Mobile Menu" aria-controls="mobileDrawer">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Mobile Navigation Drawer
+       ======================================================================== -->
+  <div class="mobile-nav-overlay" aria-hidden="true"></div>
+  <aside id="mobileDrawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-emblem">
+          <i data-lucide="scale"></i>
+        </div>
+        <span>Legal<span class="accent">Connect</span></span>
+      </div>
+      <button class="drawer-close" aria-label="Close Mobile Menu">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="#role-selection" class="mobile-nav-link">Select Portal <i data-lucide="chevron-right"></i></a>
+      <a href="citizen.html" class="mobile-nav-link" style="color: var(--gold-600);">Citizen Portal <i data-lucide="arrow-right"></i></a>
+      <a href="lawyer-auth.html" class="mobile-nav-link" style="color: var(--navy-900);">Lawyer Login <i data-lucide="arrow-right"></i></a>
+      <a href="#home" class="mobile-nav-link">Platform Overview <i data-lucide="chevron-right"></i></a>
+      <a href="#services" class="mobile-nav-link">Services <i data-lucide="chevron-right"></i></a>
+      <a href="#how-it-works" class="mobile-nav-link">How It Works <i data-lucide="chevron-right"></i></a>
+      <a href="#why-choose-us" class="mobile-nav-link">Why Choose Us <i data-lucide="chevron-right"></i></a>
+      <a href="#about" class="mobile-nav-link">About <i data-lucide="chevron-right"></i></a>
+      <a href="#contact" class="mobile-nav-link">Contact <i data-lucide="chevron-right"></i></a>
+    </nav>
+
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="citizen.html" class="btn btn-outline" style="width: 100%;">
+        <span>Continue as Citizen</span>
+      </a>
+      <a href="lawyer-auth.html" class="btn btn-primary" style="width: 100%;">
+        <span>Lawyer Login</span>
+        <i data-lucide="arrow-right"></i>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       1. LANDING & ROLE SELECTION SECTION (Prominent Welcome)
+       ======================================================================== -->
+  <section id="role-selection" class="role-hero-section">
+    <div class="container">
+      <div class="section-badge" style="margin-bottom: 1.25rem;">
+        <i data-lucide="shield-check"></i>
+        <span>LegalConnect • Role-Based Legal Management Platform</span>
+      </div>
+      <h1 class="hero-title" style="margin-bottom: 0.75rem;">
+        Welcome to <span class="text-gradient-gold">LegalConnect</span>
+      </h1>
+      <p class="hero-desc" style="margin: 0 auto; max-width: 680px;">
+        Justice should be accessible to everyone. Select your role to enter the tailored legal interface.
+      </p>
+
+      <!-- Two Prominent Role Cards -->
+      <div class="role-cards-grid">
+        <!-- A. CITIZEN CARD -->
+        <article class="role-select-card citizen">
+          <div class="role-card-badge">Public Access • No Registration Required</div>
+          <div class="role-card-icon-wrap">
+            <i data-lucide="heart-handshake"></i>
+          </div>
+          <h2 class="role-card-title">Citizen</h2>
+          <p class="role-card-desc">
+            Get legal information, understand your rights and find lawyers.
+          </p>
+
+          <div class="role-feature-bullets">
+            <div class="role-bullet-item">
+              <i data-lucide="bot"></i>
+              <span>AI Legal Assistant for Indian laws & procedures</span>
+            </div>
+            <div class="role-bullet-item">
+              <i data-lucide="user-search"></i>
+              <span>Search verified lawyers by location & practice area</span>
+            </div>
+            <div class="role-bullet-item">
+              <i data-lucide="book-open"></i>
+              <span>Plain-language legal resources & guides</span>
+            </div>
+          </div>
+
+          <a href="citizen.html" class="btn btn-primary btn-lg" style="width: 100%;">
+            <span>Continue as Citizen</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </article>
+
+        <!-- B. LAWYER CARD -->
+        <article class="role-select-card lawyer">
+          <div class="role-card-badge">Advocate Workspace • Chamber Practice Suite</div>
+          <div class="role-card-icon-wrap">
+            <i data-lucide="briefcase"></i>
+          </div>
+          <h2 class="role-card-title">Lawyer</h2>
+          <p class="role-card-desc">
+            Manage clients, cases, documents and court schedules.
+          </p>
+
+          <div class="role-feature-bullets">
+            <div class="role-bullet-item">
+              <i data-lucide="folder-git-2"></i>
+              <span>Case management, CNR tracking & e-Courts status</span>
+            </div>
+            <div class="role-bullet-item">
+              <i data-lucide="calendar"></i>
+              <span>Monthly court calendar & hearing cause lists</span>
+            </div>
+            <div class="role-bullet-item">
+              <i data-lucide="file-text"></i>
+              <span>Encrypted document repository & client management</span>
+            </div>
+          </div>
+
+          <a href="lawyer-auth.html" class="btn btn-navy btn-lg" style="width: 100%;">
+            <span>Lawyer Login</span>
+            <i data-lucide="log-in"></i>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Hero & Platform Overview Section
+       ======================================================================== -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Hero Left Column: Copy & CTAs -->
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <div class="hero-pill">
+              <span class="dot"></span>
+              <span>Next-Gen Indian Legal Technology Platform</span>
+            </div>
+          </div>
+
+          <h1 class="hero-title">
+            Justice should be <br>
+            <span class="text-gradient-gold">accessible to everyone.</span>
+          </h1>
+
+          <p class="hero-desc">
+            LegalConnect bridges the gap in the Indian justice system through intelligent practice management for advocates and accessible, plain-language legal guidance for citizens.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary btn-lg">
+              <span>Explore LegalConnect</span>
+              <i data-lucide="compass"></i>
+            </a>
+            <button class="btn btn-outline btn-lg" data-open-modal="true" data-role="citizen">
+              <span>Public Assistance</span>
+              <i data-lucide="shield-check"></i>
+            </button>
+          </div>
+
+          <!-- Credibility Trust Metrics -->
+          <div class="hero-trust">
+            <div class="trust-item">
+              <div class="trust-icon">
+                <i data-lucide="landmark"></i>
+              </div>
+              <div class="trust-text">e-Courts Ready</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <i data-lucide="book-open-check"></i>
+              </div>
+              <div class="trust-text">BNS & BSA Indexed</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <i data-lucide="lock"></i>
+              </div>
+              <div class="trust-text">Advocate Privilege Safe</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: Visual Dashboard Illustration -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card-window">
+            <div class="window-header">
+              <div class="window-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="window-title">
+                <i data-lucide="layers"></i>
+                <span>LEGALCONNECT WORKSPACE • NEW DELHI</span>
+              </div>
+              <span style="color: #64748b; font-size: 0.7rem;">v2.4 Active</span>
+            </div>
+
+            <div class="window-content">
+              <!-- Top Row Stats -->
+              <div class="mockup-stat-row">
+                <div class="mockup-stat-card">
+                  <div class="stat-label">Active Matters</div>
+                  <div class="stat-value">48</div>
+                  <div class="stat-tag">+3 This Week</div>
+                </div>
+                <div class="mockup-stat-card">
+                  <div class="stat-label">Next Hearing</div>
+                  <div class="stat-value">Today</div>
+                  <div class="stat-tag" style="color: #0284c7;">Item No. 14</div>
+                </div>
+                <div class="mockup-stat-card">
+                  <div class="stat-label">AI Research</div>
+                  <div class="stat-value">99.8%</div>
+                  <div class="stat-tag" style="color: #10b981;">Statute Citations</div>
+                </div>
+              </div>
+
+              <!-- Case Docket List -->
+              <div class="mockup-case-list">
+                <div class="mockup-case-header">
+                  <div class="mockup-case-title">
+                    <i data-lucide="calendar"></i>
+                    <span>Today's Daily Cause List</span>
+                  </div>
+                  <span style="font-size: 0.7rem; color: #64748b; font-weight: 600;">Delhi High Court</span>
+                </div>
+
+                <div class="mockup-case-item">
+                  <div class="case-info">
+                    <span class="case-cnr">CNR: DLDH01-004521-2024</span>
+                    <span class="case-court">Court 04 • Single Bench • Final Arguments</span>
+                  </div>
+                  <span class="case-badge hearing">11:30 AM</span>
+                </div>
+
+                <div class="mockup-case-item">
+                  <div class="case-info">
+                    <span class="case-cnr">CNR: DLCT02-019842-2023</span>
+                    <span class="case-court">Saket District Court • Evidence Recording</span>
+                  </div>
+                  <span class="case-badge draft">02:15 PM</span>
+                </div>
+
+                <div class="mockup-case-item">
+                  <div class="case-info">
+                    <span class="case-cnr">Statutory Query • Section 69, BNS</span>
+                    <span class="case-court">Automated Brief & Relevant Precedents Compiled</span>
+                  </div>
+                  <span class="case-badge draft">AI Verified</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badge -->
+          <div class="hero-float-badge">
+            <div class="float-badge-icon">
+              <i data-lucide="badge-check"></i>
+            </div>
+            <div class="float-badge-text">
+              <div class="title">Bar Council Compliant</div>
+              <div class="sub">Data Privacy & Confidentiality Protected</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Two Main Service Cards Section
+       ======================================================================== -->
+  <section id="services" class="section services-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <i data-lucide="sparkles"></i>
+          <span>Core Capabilities</span>
+        </div>
+        <h2 class="section-title">Two Dedicated Pillars for Modern Legal Needs</h2>
+        <p class="section-subtitle">
+          Whether you are an advocate seeking to modernize your litigation chambers or an individual seeking legal literacy and assistance, LegalConnect is engineered for clarity, speed, and precision.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- 1. LAWYER DASHBOARD CARD -->
+        <article class="service-card lawyer-card">
+          <div class="service-card-banner">
+            <div class="card-top-meta">
+              <span class="card-pill-tag">For Advocates & Law Chambers</span>
+              <div class="card-avatar-icon">
+                <i data-lucide="briefcase"></i>
+              </div>
+            </div>
+            <h3 class="card-main-title">Lawyer Dashboard</h3>
+            <p class="card-tagline">
+              Comprehensive practice management solution custom-tailored for Indian litigation and advisory workflows.
+            </p>
+          </div>
+
+          <div class="service-card-body">
+            <ul class="service-feature-list">
+              <!-- Feature: Client Management -->
+              <li class="feature-item">
+                <div class="feature-icon-box">
+                  <i data-lucide="users"></i>
+                </div>
+                <div class="feature-details">
+                  <h4 class="feature-title">Client Management</h4>
+                  <p class="feature-desc">Centralized client dossiers, contact histories, Vakalatnama records, fee schedules, and secure client communication logs.</p>
+                </div>
+              </li>
+
+              <!-- Feature: Case Management -->
+              <li class="feature-item">
+                <div class="feature-icon-box">
+                  <i data-lucide="folder-git-2"></i>
+                </div>
+                <div class="feature-details">
+                  <h4 class="feature-title">Case Management</h4>
+                  <p class="feature-desc">Track matters by CNR number, parties, and court bench. Synchronize live order sheets and case lifecycle status seamlessly.</p>
+                </div>
+              </li>
+
+              <!-- Feature: Document Management -->
+              <li class="feature-item">
+                <div class="feature-icon-box">
+                  <i data-lucide="file-text"></i>
+                </div>
+                <div class="feature-details">
+                  <h4 class="feature-title">Document Management</h4>
+                  <p class="feature-desc">Secure encrypted digital repository for pleadings, evidence bundles, affidavits, contracts, and court-ready index generation.</p>
+                </div>
+              </li>
+
+              <!-- Feature: Hearing Calendar -->
+              <li class="feature-item">
+                <div class="feature-icon-box">
+                  <i data-lucide="calendar-days"></i>
+                </div>
+                <div class="feature-details">
+                  <h4 class="feature-title">Hearing Calendar</h4>
+                  <p class="feature-desc">Automated daily cause list sync, court appearance scheduling, and intelligent conflict detection across District & High Courts.</p>
+                </div>
+              </li>
+
+              <!-- Feature: Reminders -->
+              <li class="feature-item">
+                <div class="feature-icon-box">
+                  <i data-lucide="bell-ring"></i>
+                </div>
+                <div class="feature-details">
+                  <h4 class="feature-title">Reminders & Alerts</h4>
+                  <p class="feature-desc">Proactive alerts for limitation deadlines, compliance filings, written statement submissions, and next adjourned dates.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="service-card-footer">
+              <button class="btn btn-navy card-action-btn" data-open-modal="true" data-role="lawyer">
+                <span>Request Practice Management Demo</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. PUBLIC LEGAL ASSISTANCE CARD -->
+        <article class="service-card public-card">
+          <div class="service-card-banner">
+            <div class="card-top-meta">
+              <span class="card-pill-tag">For Citizens & Businesses</span>
+              <div class="card-avatar-icon">
+                <i data-lucide="heart-handshake"></i>
+              </div>
+            </div>
+            <h3 class="card-main-title">Public Legal Assistance</h3>
+            <p class="card-tagline">
+              Demystifying the law with transparent guidance, statutory education, and verified legal representation.
+            </p>
+          </div>
+
+          <div class="service-card-body">
+            <ul class="service-feature-list">
+              <!-- Feature: AI Legal Assistant -->
+              <li class="feature-item">
+                <div class="feature-icon-box">
+                  <i data-lucide="bot"></i>
+                </div>
+                <div class="feature-details">
+                  <h4 class="feature-title">AI Legal Assistant</h4>
+                  <p class="feature-desc">Interactive, plain-language legal guidance that parses statutory provisions, rights, and potential remedies in simple terms.</p>
+                </div>
+              </li>
+
+              <!-- Feature: Understand Indian Laws -->
+              <li class="feature-item">
+                <div class="feature-icon-box">
+                  <i data-lucide="book-open"></i>
+                </div>
+                <div class="feature-details">
+                  <h4 class="feature-title">Understand Indian Laws</h4>
+                  <p class="feature-desc">Comprehensive guides on Bharatiya Nyaya Sanhita (BNS), Consumer Protection, Labor Codes, RERA, and Fundamental Rights.</p>
+                </div>
+              </li>
+
+              <!-- Feature: Find Lawyers -->
+              <li class="feature-item">
+                <div class="feature-icon-box">
+                  <i data-lucide="user-search"></i>
+                </div>
+                <div class="feature-details">
+                  <h4 class="feature-title">Find Lawyers</h4>
+                  <p class="feature-desc">Directory of verified practicing advocates categorized by court jurisdiction, domain expertise, and Bar Council credentials.</p>
+                </div>
+              </li>
+
+              <!-- Feature: Legal Information -->
+              <li class="feature-item">
+                <div class="feature-icon-box">
+                  <i data-lucide="info"></i>
+                </div>
+                <div class="feature-details">
+                  <h4 class="feature-title">Legal Information</h4>
+                  <p class="feature-desc">Step-by-step procedural playbooks for filing police complaints, RTI petitions, consumer grievances, and e-Court status lookup.</p>
+                </div>
+              </li>
+
+              <!-- Extra Feature: Procedural Roadmaps -->
+              <li class="feature-item">
+                <div class="feature-icon-box">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div class="feature-details">
+                  <h4 class="feature-title">Court Jurisdiction Guides</h4>
+                  <p class="feature-desc">Understand which forum holds jurisdiction for your grievance—from Lok Adalats to District Forums and High Courts.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="service-card-footer">
+              <button class="btn btn-primary card-action-btn" data-open-modal="true" data-role="citizen">
+                <span>Access Citizen Assistance</span>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       How It Works Section
+       ======================================================================== -->
+  <section id="how-it-works" class="section how-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <i data-lucide="git-merge"></i>
+          <span>Simple & Efficient</span>
+        </div>
+        <h2 class="section-title">How LegalConnect Works</h2>
+        <p class="section-subtitle">
+          Designed to eliminate friction, whether you are managing hundreds of ongoing court proceedings or resolving your very first legal concern.
+        </p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="how-tabs">
+        <div class="tab-pill-group" role="tablist">
+          <button class="tab-btn active" role="tab" aria-selected="true" data-tab="tab-lawyer">
+            For Advocates & Law Chambers
+          </button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab-citizen">
+            For Citizens & Litigants
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab 1: Advocate Workflow -->
+      <div id="tab-lawyer" class="tab-content active" role="tabpanel">
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-number">01</span>
+            <div class="step-icon-wrap">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <h3 class="step-heading">Onboard & Verify Chamber</h3>
+            <p class="step-description">
+              Create your secure chamber workspace. Register your State Bar Council enrollment details to activate verified advocate privileges and confidentiality guardrails.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">02</span>
+            <div class="step-icon-wrap">
+              <i data-lucide="refresh-cw"></i>
+            </div>
+            <h3 class="step-heading">Sync CNR & e-Court Dockets</h3>
+            <p class="step-description">
+              Input case numbers or CNR codes to automatically fetch daily cause lists, order sheets, and next adjourned dates directly from e-Courts India APIs.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">03</span>
+            <div class="step-icon-wrap">
+              <i data-lucide="sparkles"></i>
+            </div>
+            <h3 class="step-heading">Streamline Practice & Research</h3>
+            <p class="step-description">
+              Organize digital briefs, receive instant morning hearing reminders, draft pleadings with statutory guidance, and collaborate smoothly with junior counsel and clients.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Citizen Workflow -->
+      <div id="tab-citizen" class="tab-content" role="tabpanel">
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-number">01</span>
+            <div class="step-icon-wrap">
+              <i data-lucide="help-circle"></i>
+            </div>
+            <h3 class="step-heading">Describe Your Issue</h3>
+            <p class="step-description">
+              Type or speak your question in everyday English, Hindi, or regional languages. Our AI assistant breaks down your grievance without complicated jargon.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">02</span>
+            <div class="step-icon-wrap">
+              <i data-lucide="scale"></i>
+            </div>
+            <h3 class="step-heading">Understand Your Legal Rights</h3>
+            <p class="step-description">
+              Receive structured guidance on relevant Indian laws, required documents, dispute resolution procedures, and estimated timelines for resolution.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">03</span>
+            <div class="step-icon-wrap">
+              <i data-lucide="user-check"></i>
+            </div>
+            <h3 class="step-heading">Connect with Verified Counsel</h3>
+            <p class="step-description">
+              Filter and reach out to verified legal practitioners practicing before your local district court, tribunal, or High Court who specialize in your specific matter.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Why Choose LegalConnect Section
+       ======================================================================== -->
+  <section id="why-choose-us" class="section why-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <i data-lucide="award"></i>
+          <span>Engineered for India</span>
+        </div>
+        <h2 class="section-title">Why Choose LegalConnect?</h2>
+        <p class="section-subtitle">
+          Generic software does not work for the nuances of Indian courts. LegalConnect is purposefully built around the procedures, statutes, and realities of Indian legal practice.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <!-- Feature 1 -->
+        <div class="why-feature-card">
+          <div class="why-icon-box">
+            <i data-lucide="landmark"></i>
+          </div>
+          <h3 class="why-card-title">Tailored for Indian Jurisprudence</h3>
+          <p class="why-card-desc">
+            Direct alignment with e-Courts Services, District Courts, High Courts, and the Supreme Court of India. Native support for CNR tracking and daily cause lists.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="why-feature-card">
+          <div class="why-icon-box">
+            <i data-lucide="shield-alert"></i>
+          </div>
+          <h3 class="why-card-title">Privilege & BCI Compliance</h3>
+          <p class="why-card-desc">
+            Complies with Section 126 of the Indian Evidence Act (Advocate-Client Privilege) and Bar Council of India guidelines. End-to-end encryption for all sensitive briefs.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="why-feature-card">
+          <div class="why-icon-box">
+            <i data-lucide="cpu"></i>
+          </div>
+          <h3 class="why-card-title">Fact-Checked Statutory AI</h3>
+          <p class="why-card-desc">
+            Our legal models reference verified Indian statutes—including the new criminal laws (BNS, BNSS, BSA)—with verbatim citations to avoid hallucinations.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="why-feature-card">
+          <div class="why-icon-box">
+            <i data-lucide="clock"></i>
+          </div>
+          <h3 class="why-card-title">Save 15+ Hours Weekly</h3>
+          <p class="why-card-desc">
+            Eliminate manual court diary management. Automated morning digests, hearing alerts, and status notifications keep your chamber ahead of every limitation period.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="why-feature-card">
+          <div class="why-icon-box">
+            <i data-lucide="languages"></i>
+          </div>
+          <h3 class="why-card-title">Multilingual Public Accessibility</h3>
+          <p class="why-card-desc">
+            Breaks down legal barriers by enabling everyday citizens to understand their fundamental rights and court notices in clear, accessible language.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="why-feature-card">
+          <div class="why-icon-box">
+            <i data-lucide="folder-lock"></i>
+          </div>
+          <h3 class="why-card-title">Secure Paperless Office</h3>
+          <p class="why-card-desc">
+            Transform heavy case physical bundles into indexed, searchable digital vaults with OCR, version history, and rapid citation retrieval during hearings.
+          </p>
+        </div>
+      </div>
+
+      <!-- Regulatory Bar Council of India Notice Banner -->
+      <div class="compliance-strip">
+        <div class="compliance-content">
+          <div class="compliance-badge-icon">
+            <i data-lucide="scale"></i>
+          </div>
+          <div class="compliance-text">
+            <h4>Ethical & Regulated Legal Technology</h4>
+            <p>
+              LegalConnect is an independent practice management technology platform. In accordance with the Bar Council of India Rules, we do not solicit legal employment, advertise services, or make unauthorized claims.
+            </p>
+          </div>
+        </div>
+        <a href="#about" class="btn btn-outline-gold btn-sm">
+          <span>Read Charter</span>
+          <i data-lucide="external-link"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Indian Legal Knowledge Highlights Section
+       ======================================================================== -->
+  <section class="section knowledge-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">
+          <i data-lucide="book-marked"></i>
+          <span>Citizen Legal Literacy</span>
+        </div>
+        <h2 class="section-title">Explore Everyday Legal Information</h2>
+        <p class="section-subtitle">
+          Clear, educational overviews on frequent legal procedures in India to help you understand your rights before stepping into court.
+        </p>
+      </div>
+
+      <div class="knowledge-grid">
+        <div class="law-topic-card">
+          <span class="topic-tag">Criminal Law</span>
+          <h3 class="topic-title">BNS vs IPC Transition</h3>
+          <p class="topic-desc">Understand how the Bharatiya Nyaya Sanhita (BNS) 2023 impacts ongoing and newly registered criminal complaints.</p>
+          <a href="#contact" class="topic-link">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="law-topic-card">
+          <span class="topic-tag">Consumer Protection</span>
+          <h3 class="topic-title">Consumer Rights & E-Filing</h3>
+          <p class="topic-desc">How to submit grievance notices to consumer commissions through the national e-Daakhil system for defective products or services.</p>
+          <a href="#contact" class="topic-link">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="law-topic-card">
+          <span class="topic-tag">Property & Real Estate</span>
+          <h3 class="topic-title">RERA Dispute Resolution</h3>
+          <p class="topic-desc">Key safeguards for homebuyers dealing with delayed possession, builder defaults, and compensation mechanisms under State RERA.</p>
+          <a href="#contact" class="topic-link">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="law-topic-card">
+          <span class="topic-tag">Civil Rights</span>
+          <h3 class="topic-title">Right to Information (RTI)</h3>
+          <p class="topic-desc">Step-by-step primer on submitting first appeals, filing online RTI queries, and holding public authorities accountable.</p>
+          <a href="#contact" class="topic-link">
+            <span>Learn More</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       About Section
+       ======================================================================== -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <div class="section-badge">
+            <i data-lucide="compass"></i>
+            <span>Our Mission</span>
+          </div>
+          <h2 class="about-title">Empowering the Pillars of Indian Justice</h2>
+          <p class="about-text">
+            LegalConnect was conceived with a single, clear objective: to bring contemporary technological excellence into the daily rhythm of Indian courts and citizen interactions.
+          </p>
+          <p class="about-text">
+            While technology has transformed banking, healthcare, and governance across India, legal practitioners still spend countless hours sifting through paper cause lists, manual case diaries, and unorganized physical briefs. Concurrently, millions of ordinary citizens struggle to comprehend procedural complexities or find qualified legal representation.
+          </p>
+
+          <div class="about-pillars">
+            <div class="about-pillar-item">
+              <div class="pillar-bullet">
+                <i data-lucide="check"></i>
+              </div>
+              <div class="pillar-text">
+                <h5>Pro-Bono & Aid Ready</h5>
+                <p>Designed with integrations for Legal Services Authorities (NALSA / SLSA) to support free legal assistance.</p>
+              </div>
+            </div>
+
+            <div class="about-pillar-item">
+              <div class="pillar-bullet">
+                <i data-lucide="check"></i>
+              </div>
+              <div class="pillar-text">
+                <h5>Data Sovereignty</h5>
+                <p>All case dockets and documents are hosted in high-security, India-domiciled data infrastructure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <div class="about-visual-card">
+            <div class="quote-icon">
+              <i data-lucide="quote"></i>
+            </div>
+            <p class="quote-text">
+              "The delay in justice can be substantially minimized when court procedures and chamber administration are powered by smart, respectful technology that respects the solemnity of the judicial process."
+            </p>
+            <div class="quote-author">
+              <div class="author-badge">LC</div>
+              <div class="author-info">
+                <h6>LegalConnect Principles Council</h6>
+                <span>Serving the Indian Judicial Ecosystem</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Contact Section
+       ======================================================================== -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Info Column -->
+        <div class="contact-info-panel">
+          <div>
+            <div class="section-badge">
+              <i data-lucide="message-square"></i>
+              <span>Get in Touch</span>
+            </div>
+            <h2 class="contact-panel-title">Connect with Our Team</h2>
+            <p class="contact-panel-desc">
+              Have questions about integrating LegalConnect into your law chambers, or seeking information about our citizen assistance platform? Reach out to us today.
+            </p>
+          </div>
+
+          <div class="contact-details-list">
+            <div class="contact-detail-item">
+              <div class="contact-item-icon">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <div class="contact-item-text">
+                <h5>Headquarters</h5>
+                <p>Barakhamba Road, Connaught Place, New Delhi 110001 (Near Supreme Court of India)</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-item-icon">
+                <i data-lucide="mail"></i>
+              </div>
+              <div class="contact-item-text">
+                <h5>Email Inquiries</h5>
+                <a href="mailto:support@legalconnect.in">support@legalconnect.in</a>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-item-icon">
+                <i data-lucide="phone"></i>
+              </div>
+              <div class="contact-item-text">
+                <h5>Phone Support</h5>
+                <p>+91 (011) 4892-0190 • Mon – Sat, 9:00 AM – 6:30 PM IST</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding: 1rem; background: #ffffff; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--navy-950); margin-bottom: 0.25rem;">
+              <i data-lucide="shield" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; color: var(--gold-600);"></i>
+              Confidentiality Guaranteed
+            </div>
+            <div style="font-size: 0.75rem; color: var(--text-tertiary);">
+              All communications sent through this form are protected under strict enterprise data privacy standards.
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Column -->
+        <div class="contact-form-card">
+          <form id="contactForm" novalidate>
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Full Name *</label>
+                <input type="text" id="contactName" class="form-control" placeholder="Adv. Rajesh Sharma / Priya Verma" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Email Address *</label>
+                <input type="email" id="contactEmail" class="form-control" placeholder="advocate@chamber.in" required>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="contactPhone" class="form-label">Phone Number (10 Digits)</label>
+                <input type="tel" id="contactPhone" class="form-control" placeholder="+91 98765 43210">
+              </div>
+              <div class="form-group">
+                <label for="contactCategory" class="form-label">I Am A:</label>
+                <select id="contactCategory" class="form-control">
+                  <option value="advocate">Practicing Advocate / Law Chamber</option>
+                  <option value="lawfirm">Law Firm Partner / Administrator</option>
+                  <option value="citizen">Citizen Seeking Legal Information</option>
+                  <option value="student">Law Student / Researcher</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject" class="form-label">Subject</label>
+              <input type="text" id="contactSubject" class="form-control" placeholder="Practice Management Demo / General Inquiry">
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Message *</label>
+              <textarea id="contactMessage" class="form-control" placeholder="How can LegalConnect support your legal practice or inquiry?" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-navy" style="width: 100%; margin-top: 0.5rem;">
+              <span>Send Message</span>
+              <i data-lucide="send"></i>
+            </button>
+
+            <div id="contactStatusMsg" class="form-status-msg" role="alert"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-main-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="#home" class="brand-logo">
+            <div class="brand-emblem">
+              <i data-lucide="scale"></i>
+            </div>
+            <span>Legal<span class="accent">Connect</span></span>
+          </a>
+          <p class="footer-bio">
+            LegalConnect is India's dedicated AI-powered legal technology platform designed to streamline advocate chambers and make legal literacy accessible to every citizen.
+          </p>
+          <div style="display: flex; gap: 0.75rem;">
+            <span style="font-size: 0.75rem; color: var(--gold-300); display: inline-flex; align-items: center; gap: 0.3rem;">
+              <i data-lucide="check-circle-2" style="width: 14px; height: 14px;"></i> Made for Indian Jurisdictions
+            </span>
+          </div>
+        </div>
+
+        <!-- Quick Navigation Links -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Home</a></li>
+            <li><a href="#services" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Services Overview</a></li>
+            <li><a href="#how-it-works" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> How It Works</a></li>
+            <li><a href="#why-choose-us" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Why Choose Us</a></li>
+            <li><a href="#about" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> About Us</a></li>
+            <li><a href="#contact" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal Services & Modules -->
+        <div>
+          <h4 class="footer-heading">Platform Solutions</h4>
+          <ul class="footer-links-list">
+            <li><a href="#services" class="footer-link">Lawyer Dashboard</a></li>
+            <li><a href="#services" class="footer-link">Public Legal Assistance</a></li>
+            <li><a href="#services" class="footer-link">CNR & e-Courts Tracker</a></li>
+            <li><a href="#services" class="footer-link">Hearing Calendar Diary</a></li>
+            <li><a href="#services" class="footer-link">BNS & BSA Statutory Assistant</a></li>
+            <li><a href="#services" class="footer-link">Document Vault & Indexing</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Legal Dispatch -->
+        <div>
+          <h4 class="footer-heading">Legal Tech Dispatch</h4>
+          <p class="footer-newsletter-text">
+            Receive monthly updates on Indian e-court developments, procedural changes, and platform enhancements.
+          </p>
+          <form id="newsletterForm" class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="advocate@bar.in" required>
+            <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe">
+              <i data-lucide="arrow-right"></i>
+            </button>
+          </form>
+          <span style="font-size: 0.72rem; color: var(--text-light);">Zero spam. Only verified legal-tech notifications.</span>
+        </div>
+      </div>
+
+      <!-- Regulatory Bar Council Disclaimer -->
+      <div class="footer-disclaimer-box">
+        <div class="disclaimer-title">
+          <i data-lucide="alert-circle" style="width: 16px; height: 16px;"></i>
+          <span>Bar Council of India Regulatory Disclaimer</span>
+        </div>
+        <p class="disclaimer-text">
+          As per the rules of the Bar Council of India, advocates are not permitted to advertise or solicit work in any form. LegalConnect is an independent legal technology application and practice management software. It is not a law firm, does not provide formal legal advice, and does not engage in lawyer solicitation. The information provided on this platform is strictly for informational and practice administration purposes.
+        </p>
+      </div>
+
+      <!-- Footer Bottom Copyright & Links -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 LegalConnect Technologies Pvt. Ltd. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#about">Privacy Policy</a>
+          <a href="#about">Terms of Service</a>
+          <a href="#about">Advocate Privilege Charter</a>
+          <a href="#contact">Security & Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       Get Started / Schedule Demo Modal
+       ======================================================================== -->
+  <div id="getStartedModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <h3>Welcome to LegalConnect</h3>
+          <p>Select your user profile to get customized access</p>
+        </div>
+        <button class="modal-close-btn" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-role-options">
+          <div class="role-choice-card selected" data-role="lawyer">
+            <div class="role-choice-icon">
+              <i data-lucide="briefcase"></i>
+            </div>
+            <div class="role-choice-title">Legal Professional</div>
+            <div class="role-choice-desc">Advocate, chamber partner, or corporate counsel managing cases and clients.</div>
+          </div>
+
+          <div class="role-choice-card" data-role="citizen">
+            <div class="role-choice-icon">
+              <i data-lucide="user"></i>
+            </div>
+            <div class="role-choice-title">Citizen / Business</div>
+            <div class="role-choice-desc">Seeking AI legal assistance, understanding laws, or finding verified counsel.</div>
+          </div>
+        </div>
+
+        <form id="modalOnboardForm">
+          <input type="hidden" id="selectedRoleInput" value="lawyer">
+          
+          <div class="modal-form-fields">
+            <div class="form-group" style="margin-bottom: 0.75rem;">
+              <label for="modalFullName" class="form-label">Full Name *</label>
+              <input type="text" id="modalFullName" class="form-control" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0.75rem;">
+              <label for="modalEmail" class="form-label">Email Address *</label>
+              <input type="email" id="modalEmail" class="form-control" placeholder="name@domain.com" required>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0.75rem;">
+              <label for="modalPhone" class="form-label">Phone / WhatsApp Number</label>
+              <input type="tel" id="modalPhone" class="form-control" placeholder="+91 98765 43210">
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+              <span>Continue with Registration</span>
+              <i data-lucide="check"></i>
+            </button>
+          </div>
+
+          <div id="modalSuccessMsg" class="form-status-msg" role="alert"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll-to-Top Floating Button -->
+  <button class="scroll-top-btn" aria-label="Scroll back to top">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>

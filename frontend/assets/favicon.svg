@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0b1528"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" stroke="#c5a039" stroke-opacity="0.4" stroke-width="2"/>
+  <!-- Central Beam & Pillar -->
+  <path d="M32 14V48" stroke="#d4af51" stroke-width="3" stroke-linecap="round"/>
+  <path d="M22 50H42" stroke="#d4af51" stroke-width="3" stroke-linecap="round"/>
+  <!-- Top Crossbar -->
+  <path d="M16 20H48" stroke="#d4af51" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="14" r="3.5" fill="#d4af51"/>
+  <!-- Left Scale Pan -->
+  <path d="M16 20L11 32" stroke="#d4af51" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M16 20L21 32" stroke="#d4af51" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M9 32C9 36 23 36 23 32H9Z" fill="#d4af51" fill-opacity="0.25" stroke="#d4af51" stroke-width="1.8"/>
+  <!-- Right Scale Pan -->
+  <path d="M48 20L43 32" stroke="#d4af51" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M48 20L53 32" stroke="#d4af51" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M41 32C41 36 55 36 55 32H41Z" fill="#d4af51" fill-opacity="0.25" stroke="#d4af51" stroke-width="1.8"/>
+</svg>

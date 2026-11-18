@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LegalConnect Citizen Interface - AI Legal Assistant, Lawyer Directory, and Public Legal Information for India.">
+  <title>Citizen Legal Assistance Portal | LegalConnect</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon & Stylesheets -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="citizen-body">
+
+  <!-- ========================================================================
+       Citizen Portal Header
+       ======================================================================== -->
+  <header class="navbar" style="position: sticky;">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-emblem">
+            <i data-lucide="scale"></i>
+          </div>
+          <span>Legal<span class="accent">Connect</span></span>
+        </a>
+        <span class="role-portal-pill">Citizen Portal</span>
+      </div>
+
+      <!-- Quick Section Tabs -->
+      <nav class="citizen-nav-tabs" role="tablist">
+        <button class="citizen-nav-tab active" data-view="ai-assistant-view" role="tab">
+          <i data-lucide="bot"></i>
+          <span>AI Legal Assistant</span>
+        </button>
+        <button class="citizen-nav-tab" data-view="lawyer-directory-view" role="tab">
+          <i data-lucide="user-search"></i>
+          <span>Find Lawyers</span>
+        </button>
+        <button class="citizen-nav-tab" data-view="legal-resources-view" role="tab">
+          <i data-lucide="book-open"></i>
+          <span>Legal Guides</span>
+        </button>
+      </nav>
+
+      <!-- Return to Role Selection Button -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="index.html" class="btn btn-outline btn-sm">
+          <i data-lucide="arrow-left"></i>
+          <span>Role Selection</span>
+        </a>
+        <a href="lawyer-auth.html" class="btn btn-navy btn-sm">
+          <i data-lucide="briefcase"></i>
+          <span>Lawyer Login</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Prototype Advisory Notice -->
+  <aside class="prototype-banner" role="complementary" aria-label="Prototype Notice">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 0.6rem;">
+        <i data-lucide="alert-triangle" style="width: 18px; height: 18px; color: var(--gold-400);"></i>
+        <span><strong>Academic Prototype Notice:</strong> No mandatory registration required. AI responses provide general educational information and do NOT constitute formal legal advice.</span>
+      </div>
+      <span style="font-size: 0.75rem; color: var(--gold-300);">v2.4 Demo Environment</span>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       VIEW 1: AI Legal Assistant Chat Interface
+       ======================================================================== -->
+  <main id="ai-assistant-view" class="citizen-view-section active">
+    <div class="container" style="max-width: 1000px; padding-top: 2rem; padding-bottom: 3.5rem;">
+
+      <!-- Header & Legal Disclaimer -->
+      <div class="citizen-card-header">
+        <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.75rem;">
+          <div class="citizen-avatar-box">
+            <i data-lucide="bot"></i>
+          </div>
+          <div>
+            <h1 style="font-family: var(--font-serif); font-size: 1.85rem; color: var(--navy-950);">
+              AI Legal Assistant for Indian Law
+            </h1>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              Ask questions regarding Indian legal procedures, consumer protection, new criminal statutes (BNS/BNSS), and court terminology.
+            </p>
+          </div>
+        </div>
+
+        <div class="disclaimer-alert-box">
+          <i data-lucide="shield-alert"></i>
+          <p>
+            <strong>Important Legal Disclaimer:</strong> LegalConnect AI is an automated educational tool designed to demystify Indian laws. It does not provide formal legal counsel or establish an attorney-client relationship. Always verify facts and consult an enrolled advocate for active litigation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Starter Prompts -->
+      <div class="prompt-pills-bar">
+        <span class="prompt-pills-label"><i data-lucide="sparkles"></i> Try Asking:</span>
+        <button class="prompt-pill" data-prompt="How to file a consumer complaint on e-Daakhil?">
+          How to file on e-Daakhil?
+        </button>
+        <button class="prompt-pill" data-prompt="What are my rights if arrested by police under BNSS?">
+          Arrest rights under BNSS
+        </button>
+        <button class="prompt-pill" data-prompt="Difference between BNS and IPC for criminal cases?">
+          BNS vs IPC differences
+        </button>
+        <button class="prompt-pill" data-prompt="How to resolve a delayed possession issue under RERA?">
+          Delayed possession under RERA
+        </button>
+        <button class="prompt-pill" data-prompt="What is a CNR number and how to check court status?">
+          What is a CNR court number?
+        </button>
+      </div>
+
+      <!-- Live Chat Container -->
+      <div class="chat-window-box">
+        <div id="chatMessages" class="chat-thread-scroll">
+          <!-- Initial Welcome Message from AI -->
+          <div class="chat-bubble ai">
+            <div class="chat-bubble-header">
+              <i data-lucide="bot"></i>
+              <span>LegalConnect AI Assistant (General Information)</span>
+            </div>
+            <div class="chat-bubble-text">
+              Namaste! I am the LegalConnect AI Assistant for Indian Legal Literacy. I can help you understand statutory provisions under the <strong>Bharatiya Nyaya Sanhita (BNS)</strong>, consumer dispute procedures, RTI applications, and how to track proceedings on the e-Courts system.<br><br>
+              How can I assist you today? You can select a starter prompt above or type your question below.
+            </div>
+            <div class="chat-disclaimer-note">
+              <i data-lucide="info"></i>
+              <span>Educational informational response only. Not formal legal advice.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Input Bar -->
+        <div class="chat-input-bar">
+          <input type="text" id="chatInput" class="chat-input-field" placeholder="Ask about Indian legal rights, procedures, or statutes (e.g. consumer refund, bail rules)..." aria-label="Type your legal query">
+          <button id="chatSendBtn" class="btn btn-primary" aria-label="Send message">
+            <span>Ask AI</span>
+            <i data-lucide="send"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       VIEW 2: Lawyer Directory
+       ======================================================================== -->
+  <section id="lawyer-directory-view" class="citizen-view-section">
+    <div class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div class="section-badge" style="margin-bottom: 0.5rem;">
+            <i data-lucide="user-check"></i>
+            <span>Verified Counsel Directory</span>
+          </div>
+          <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--navy-950);">
+            Find Enrolled Legal Practitioners
+          </h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Search practicing advocates across Indian High Courts and District Jurisdictions by location and specialization.
+          </p>
+        </div>
+        <span id="lawyerCountBadge" class="dir-count-pill">6 Verified Advocates (Demo)</span>
+      </div>
+
+      <!-- Search and Filters Bar -->
+      <div class="directory-filter-bar">
+        <div class="dir-search-wrap">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" id="directorySearch" placeholder="Search by advocate name, court, or keyword..." class="form-control">
+        </div>
+
+        <div class="dir-select-wrap">
+          <select id="filterLocation" class="form-control" aria-label="Filter by Location or Court">
+            <option value="all">All Locations & Courts</option>
+            <option value="Delhi">Delhi & NCR Courts</option>
+            <option value="Gurugram">Gurugram (RERA / District)</option>
+            <option value="Mumbai">Mumbai (Bombay HC / NCLT)</option>
+            <option value="Chandigarh">Chandigarh (Punjab & Haryana HC)</option>
+            <option value="Kolkata">Kolkata (Calcutta HC)</option>
+            <option value="Bengaluru">Bengaluru (Karnataka HC)</option>
+          </select>
+        </div>
+
+        <div class="dir-select-wrap">
+          <select id="filterPractice" class="form-control" aria-label="Filter by Practice Area">
+            <option value="all">All Practice Areas</option>
+            <option value="Civil Litigation">Civil Litigation</option>
+            <option value="Criminal Law (BNS)">Criminal Law (BNS)</option>
+            <option value="Real Estate & RERA">Real Estate & RERA</option>
+            <option value="Consumer Protection">Consumer Protection</option>
+            <option value="Corporate & Contract">Corporate & Contract</option>
+            <option value="Family Law">Family Law</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Grid of Lawyer Cards -->
+      <div id="lawyerDirectoryGrid" class="directory-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       VIEW 3: Legal Resources and Guides
+       ======================================================================== -->
+  <section id="legal-resources-view" class="citizen-view-section">
+    <div class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+      <div class="section-header" style="text-align: left; margin-bottom: 2.5rem;">
+        <div class="section-badge">
+          <i data-lucide="book-marked"></i>
+          <span>Public Knowledge Hub</span>
+        </div>
+        <h2 class="section-title">Essential Indian Legal Guides</h2>
+        <p class="section-subtitle">
+          Plain-language explanations of essential statutes and constitutional remedies to help citizens navigate legal procedures confidently.
+        </p>
+      </div>
+
+      <div class="guides-grid">
+        <!-- Guide 1 -->
+        <article class="guide-card">
+          <div class="guide-card-icon">
+            <i data-lucide="landmark"></i>
+          </div>
+          <span class="guide-tag">Criminal Jurisprudence</span>
+          <h3 class="guide-title">Guide to the Bharatiya Nyaya Sanhita (BNS) 2023</h3>
+          <p class="guide-summary">
+            A comprehensive overview of India's modernized criminal code which replaced the IPC. Learn about community service provisions, digital forensics recognition, and reorganized offences.
+          </p>
+          <ul class="guide-points">
+            <li>Replaced 511 IPC sections with 358 BNS provisions</li>
+            <li>Introduction of Community Service as punitive alternative</li>
+            <li>Mandatory forensic investigation for serious offences</li>
+          </ul>
+        </article>
+
+        <!-- Guide 2 -->
+        <article class="guide-card">
+          <div class="guide-card-icon">
+            <i data-lucide="file-check"></i>
+          </div>
+          <span class="guide-tag">Citizen Transparency</span>
+          <h3 class="guide-title">How to File an Online RTI Application</h3>
+          <p class="guide-summary">
+            Step-by-step primer on submitting Right to Information (RTI) queries to central and state government departments under the RTI Act, 2005.
+          </p>
+          <ul class="guide-points">
+            <li>Nominal ₹10 filing fee via RTI Online Portal</li>
+            <li>Mandatory 30-day statutory response timeline</li>
+            <li>First Appeal procedure if information is rejected or delayed</li>
+          </ul>
+        </article>
+
+        <!-- Guide 3 -->
+        <article class="guide-card">
+          <div class="guide-card-icon">
+            <i data-lucide="scale"></i>
+          </div>
+          <span class="guide-tag">Banking & Finance</span>
+          <h3 class="guide-title">Cheque Bounce under Section 138 NI Act</h3>
+          <p class="guide-summary">
+            Strict statutory guidelines governing dishonour of cheques for insufficiency of funds. Crucial notice timelines and complaint deadlines before Judicial Magistrates.
+          </p>
+          <ul class="guide-points">
+            <li>Mandatory statutory notice within 30 days of bank return memo</li>
+            <li>15-day grace period for payment by drawer</li>
+            <li>Filing of criminal complaint within 1 month from cause of action</li>
+          </ul>
+        </article>
+
+        <!-- Guide 4 -->
+        <article class="guide-card">
+          <div class="guide-card-icon">
+            <i data-lucide="shield-check"></i>
+          </div>
+          <span class="guide-tag">Police Procedures</span>
+          <h3 class="guide-title">Understanding Regular FIR vs Zero FIR</h3>
+          <p class="guide-summary">
+            A Zero FIR allows any police station to register a cognizable criminal complaint regardless of geographical jurisdiction, ensuring immediate preliminary action.
+          </p>
+          <ul class="guide-points">
+            <li>Zero FIR registered without a serial number at any station</li>
+            <li>Transferred subsequently to the jurisdictional police station</li>
+            <li>Essential for emergencies involving serious bodily harm</li>
+          </ul>
+        </article>
+
+        <!-- Guide 5 -->
+        <article class="guide-card">
+          <div class="guide-card-icon">
+            <i data-lucide="heart-handshake"></i>
+          </div>
+          <span class="guide-tag">Free Legal Aid</span>
+          <h3 class="guide-title">Accessing Free Legal Aid via NALSA / DLSA</h3>
+          <p class="guide-summary">
+            Article 39A of the Constitution guarantees free legal assistance to disadvantaged sections. Learn about eligibility criteria under Section 12 of the Legal Services Authorities Act.
+          </p>
+          <ul class="guide-points">
+            <li>Free for women, children, undertrial prisoners, and marginalized communities</li>
+            <li>Available in every district via the District Court Legal Services Committee</li>
+            <li>Lok Adalat alternative dispute resolution without court fees</li>
+          </ul>
+        </article>
+
+        <!-- Guide 6 -->
+        <article class="guide-card">
+          <div class="guide-card-icon">
+            <i data-lucide="layers"></i>
+          </div>
+          <span class="guide-tag">e-Governance</span>
+          <h3 class="guide-title">Navigating e-Courts & Case CNR Lookup</h3>
+          <p class="guide-summary">
+            Demystifying how Indian court dockets work. Step-by-step instructions on accessing daily cause lists, interim orders, and final judgments using the national e-Courts portal.
+          </p>
+          <ul class="guide-points">
+            <li>Universal 16-character Case Natural Number (CNR) system</li>
+            <li>Accessing digital order sheets within 24 hours of hearing</li>
+            <li>SMS alert services for litigants through eCourts services</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Consultation Inquiry Modal
+       ======================================================================== -->
+  <div id="consultationModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <h3>Request Consultation</h3>
+          <p>Send an inquiry to selected advocate</p>
+        </div>
+        <button id="closeConsultModal" class="modal-close-btn" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem;">
+          <h4 id="consultLawyerName" style="font-weight: 700; color: var(--navy-950);">Advocate Name</h4>
+          <span id="consultLawyerContact" style="font-size: 0.8rem; color: var(--text-secondary);">Office & Contact</span>
+        </div>
+
+        <form id="consultForm">
+          <div class="form-group" style="margin-bottom: 0.85rem;">
+            <label class="form-label">Your Full Name *</label>
+            <input type="text" class="form-control" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group" style="margin-bottom: 0.85rem;">
+              <label class="form-label">Phone / WhatsApp *</label>
+              <input type="tel" class="form-control" placeholder="+91 98765 43210" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 0.85rem;">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="yourname@gmail.com">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0.85rem;">
+            <label class="form-label">Brief Description of Legal Concern *</label>
+            <textarea class="form-control" style="min-height: 90px;" placeholder="Describe your case type or legal query briefly..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-navy" style="width: 100%;">
+            <span>Submit Demo Consultation Request</span>
+            <i data-lucide="send"></i>
+          </button>
+
+          <div id="consultSuccessMsg" class="form-status-msg" role="alert"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Store & Citizen Scripts -->
+  <script src="js/store.js"></script>
+  <script src="js/citizen.js"></script>
+</body>
+</html>

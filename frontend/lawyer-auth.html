@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LegalConnect Advocate Portal - Secure Login and Registration for Legal Practitioners.">
+  <title>Lawyer Authentication | LegalConnect</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon & Stylesheet -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="auth-page-body">
+
+  <div class="auth-layout">
+    <!-- Left Hero Column -->
+    <div class="auth-hero-column">
+      <div style="position: relative; z-index: 2;">
+        <a href="index.html" class="brand-logo" style="color: #ffffff; margin-bottom: 2.5rem; display: inline-flex;">
+          <div class="brand-emblem" style="background: rgba(255, 255, 255, 0.1); border-color: var(--gold-400);">
+            <i data-lucide="scale"></i>
+          </div>
+          <span>Legal<span class="accent">Connect</span></span>
+        </a>
+
+        <div class="section-badge dark" style="margin-bottom: 1.25rem;">
+          <i data-lucide="shield-check"></i>
+          <span>Advocate Practice Suite</span>
+        </div>
+
+        <h1 style="font-family: var(--font-serif); font-size: 2.35rem; color: #ffffff; line-height: 1.25; margin-bottom: 1.25rem;">
+          Built for the Rhythm of Indian Law Chambers
+        </h1>
+
+        <p style="color: var(--text-light); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; max-width: 480px;">
+          Seamlessly manage court dockets, daily cause list hearings, limitation alerts, and client briefs in one encrypted workspace.
+        </p>
+
+        <!-- Feature List -->
+        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <div style="display: flex; align-items: center; gap: 0.85rem; color: #ffffff;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--gold-subtle); color: var(--gold-400); display: flex; align-items: center; justify-content: center;">
+              <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+            </div>
+            <span style="font-size: 0.95rem;">Automated e-Courts & High Court Cause List Sync</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.85rem; color: #ffffff;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--gold-subtle); color: var(--gold-400); display: flex; align-items: center; justify-content: center;">
+              <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+            </div>
+            <span style="font-size: 0.95rem;">Section 126 Evidence Act Client Privilege Protections</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.85rem; color: #ffffff;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--gold-subtle); color: var(--gold-400); display: flex; align-items: center; justify-content: center;">
+              <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+            </div>
+            <span style="font-size: 0.95rem;">Integrated Bharatiya Nyaya Sanhita (BNS) Statutory Library</span>
+          </div>
+        </div>
+
+        <!-- Academic Disclaimer -->
+        <div style="margin-top: 3.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-md);">
+          <div style="display: flex; align-items: center; gap: 0.4rem; color: var(--gold-400); font-size: 0.8rem; font-weight: 700; margin-bottom: 0.25rem;">
+            <i data-lucide="info" style="width: 14px; height: 14px;"></i>
+            <span>PROTOTYPE SIMULATION NOTICE</span>
+          </div>
+          <p style="color: var(--text-light); font-size: 0.78rem; line-height: 1.5;">
+            This platform is an academic demonstration prototype. Bar Council enrollment IDs entered here are simulated locally for test workflows and do not represent verified credentials issued by official Bar Councils.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Form Column -->
+    <div class="auth-form-column">
+      <div class="auth-card">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+          <a href="index.html" class="btn btn-outline btn-sm">
+            <i data-lucide="arrow-left"></i>
+            <span>Role Selection</span>
+          </a>
+          <span style="font-size: 0.75rem; font-weight: 700; color: var(--gold-600); text-transform: uppercase;">Advocate Portal</span>
+        </div>
+
+        <!-- Tab Toggle for Login vs Registration -->
+        <div class="auth-tabs" role="tablist">
+          <button id="tabBtnLogin" class="auth-tab active" role="tab" aria-selected="true">
+            Advocate Login
+          </button>
+          <button id="tabBtnRegister" class="auth-tab" role="tab" aria-selected="false">
+            New Registration
+          </button>
+        </div>
+
+        <!-- 1-Click Demo Accounts Bar -->
+        <div class="demo-accounts-box">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--navy-950); text-transform: uppercase;">
+              <i data-lucide="zap" style="width: 13px; height: 13px; color: var(--gold-600); display: inline-block;"></i>
+              Quick 1-Click Demo Logins:
+            </span>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;">
+            <button type="button" id="btnQuickLogin1" class="btn btn-sm btn-outline" style="font-size: 0.75rem; text-align: left; padding: 0.45rem 0.6rem;">
+              <span>Adv. Rajesh Sharma (Delhi HC)</span>
+            </button>
+            <button type="button" id="btnQuickLogin2" class="btn btn-sm btn-outline" style="font-size: 0.75rem; text-align: left; padding: 0.45rem 0.6rem;">
+              <span>Adv. Priya Malhotra (Mumbai)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form id="lawyerLoginForm" class="auth-form-section active">
+          <div class="form-group">
+            <label for="loginEmail" class="form-label">Chamber Email Address *</label>
+            <input type="email" id="loginEmail" class="form-control" value="rajesh.sharma@delhichambers.in" required>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword" class="form-label">Password *</label>
+            <input type="password" id="loginPassword" class="form-control" value="DemoAdvocate2026!" required>
+          </div>
+
+          <div class="form-group">
+            <label for="loginBarId" class="form-label">State Bar Council Enrollment ID *</label>
+            <input type="text" id="loginBarId" class="form-control" value="D/1428/2015" required>
+          </div>
+
+          <!-- Simulated Verification Notice Pill -->
+          <div class="simulated-status-pill">
+            <i data-lucide="shield-alert"></i>
+            <span>Simulated Status: <strong>DEMO / NOT OFFICIALLY VERIFIED</strong></span>
+          </div>
+
+          <button type="submit" class="btn btn-navy" style="width: 100%; margin-top: 1rem;">
+            <span>Sign In to Advocate Workspace</span>
+            <i data-lucide="arrow-right"></i>
+          </button>
+        </form>
+
+        <!-- REGISTRATION FORM -->
+        <form id="lawyerRegisterForm" class="auth-form-section">
+          <div class="form-group">
+            <label for="regName" class="form-label">Advocate Full Name *</label>
+            <input type="text" id="regName" class="form-control" placeholder="Adv. Amitabha Sen" required>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="regEmail" class="form-label">Email *</label>
+              <input type="email" id="regEmail" class="form-control" placeholder="advocate@bar.in" required>
+            </div>
+            <div class="form-group">
+              <label for="regPhone" class="form-label">Phone *</label>
+              <input type="tel" id="regPhone" class="form-control" placeholder="+91 98110 00000" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regBarId" class="form-label">Bar Council Enrollment ID *</label>
+            <input type="text" id="regBarId" class="form-control" placeholder="e.g. D/1892/2019" required>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="regCouncil" class="form-label">State Bar Council *</label>
+              <select id="regCouncil" class="form-control">
+                <option value="Bar Council of Delhi">Bar Council of Delhi</option>
+                <option value="Bar Council of Maharashtra & Goa">Bar Council of Maharashtra & Goa</option>
+                <option value="Bar Council of Punjab & Haryana">Bar Council of Punjab & Haryana</option>
+                <option value="Bar Council of Karnataka">Bar Council of Karnataka</option>
+                <option value="Bar Council of West Bengal">Bar Council of West Bengal</option>
+                <option value="Bar Council of Tamil Nadu">Bar Council of Tamil Nadu</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="regPassword" class="form-label">Set Password *</label>
+              <input type="password" id="regPassword" class="form-control" placeholder="Min. 6 chars" required>
+            </div>
+          </div>
+
+          <div class="simulated-status-pill">
+            <i data-lucide="shield-alert"></i>
+            <span>Simulated Status: <strong>DEMO / NOT OFFICIALLY VERIFIED</strong></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+            <span>Create Demo Chamber Workspace</span>
+            <i data-lucide="check"></i>
+          </button>
+        </form>
+
+        <div id="authStatusAlert" class="form-status-msg" role="alert"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) window.lucide.createIcons();
+
+      const tabLogin = document.getElementById('tabBtnLogin');
+      const tabRegister = document.getElementById('tabBtnRegister');
+      const formLogin = document.getElementById('lawyerLoginForm');
+      const formRegister = document.getElementById('lawyerRegisterForm');
+      const authStatusAlert = document.getElementById('authStatusAlert');
+
+      // Tab switching
+      tabLogin?.addEventListener('click', () => {
+        tabLogin.classList.add('active');
+        tabRegister.classList.remove('active');
+        formLogin.classList.add('active');
+        formRegister.classList.remove('active');
+      });
+
+      tabRegister?.addEventListener('click', () => {
+        tabRegister.classList.add('active');
+        tabLogin.classList.remove('active');
+        formRegister.classList.add('active');
+        formLogin.classList.remove('active');
+      });
+
+      // Quick 1-Click Login buttons
+      document.getElementById('btnQuickLogin1')?.addEventListener('click', () => {
+        document.getElementById('loginEmail').value = 'rajesh.sharma@delhichambers.in';
+        document.getElementById('loginBarId').value = 'D/1428/2015';
+        executeLogin({
+          name: 'Adv. Rajesh Sharma',
+          email: 'rajesh.sharma@delhichambers.in',
+          barId: 'D/1428/2015',
+          barCouncil: 'Bar Council of Delhi',
+          verificationStatus: 'DEMO / NOT OFFICIALLY VERIFIED'
+        });
+      });
+
+      document.getElementById('btnQuickLogin2')?.addEventListener('click', () => {
+        document.getElementById('loginEmail').value = 'priya.malhotra@mumbaibar.org';
+        document.getElementById('loginBarId').value = 'MAH/3421/2018';
+        executeLogin({
+          name: 'Adv. Priya Malhotra',
+          email: 'priya.malhotra@mumbaibar.org',
+          barId: 'MAH/3421/2018',
+          barCouncil: 'Bar Council of Maharashtra & Goa',
+          verificationStatus: 'DEMO / NOT OFFICIALLY VERIFIED'
+        });
+      });
+
+      function executeLogin(profile) {
+        if (authStatusAlert) {
+          authStatusAlert.className = 'form-status-msg success';
+          authStatusAlert.textContent = `Demo verification simulated for ${profile.barId}. Entering workspace...`;
+          authStatusAlert.style.display = 'block';
+        }
+
+        LegalStore.loginLawyer(profile);
+
+        setTimeout(() => {
+          window.location.href = 'lawyer-dashboard.html';
+        }, 600);
+      }
+
+      // Handle Regular Login Submit
+      formLogin?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('loginEmail').value.trim();
+        const barId = document.getElementById('loginBarId').value.trim();
+
+        if (!email || !barId) {
+          alert('Please enter your email and Bar Council Enrollment ID.');
+          return;
+        }
+
+        const currentProfile = LegalStore.getLawyer();
+        currentProfile.email = email;
+        currentProfile.barId = barId;
+        executeLogin(currentProfile);
+      });
+
+      // Handle Registration Submit
+      formRegister?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('regName').value.trim();
+        const email = document.getElementById('regEmail').value.trim();
+        const barId = document.getElementById('regBarId').value.trim();
+        const council = document.getElementById('regCouncil').value;
+
+        if (!name || !email || !barId) {
+          alert('Please complete all required fields.');
+          return;
+        }
+
+        const newProfile = {
+          name,
+          email,
+          barId,
+          barCouncil: council,
+          verificationStatus: 'DEMO / NOT OFFICIALLY VERIFIED',
+          chamber: 'Chambers of ' + name,
+          primaryCourt: council.replace('Bar Council of ', '') + ' Courts',
+          practiceAreas: ['Civil & Commercial Litigation', 'General Practice']
+        };
+
+        executeLogin(newProfile);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LegalConnect - Complete Advocate Practice Management Suite for Indian Courts.">
+  <title>Lawyer Workspace | LegalConnect</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon & Stylesheets -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-body">
+
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="dashboard-wrapper">
+    <!-- ====================================================================
+         LEFT SIDEBAR NAVIGATION
+         ==================================================================== -->
+    <aside class="lawyer-sidebar" role="navigation" aria-label="Lawyer Workspace Sidebar">
+      <!-- Sidebar Header -->
+      <div class="sidebar-brand">
+        <a href="index.html" class="brand-logo" style="color: #ffffff;">
+          <div class="brand-emblem">
+            <i data-lucide="scale"></i>
+          </div>
+          <span>Legal<span class="accent">Connect</span></span>
+        </a>
+      </div>
+
+      <!-- Advocate Profile Snippet in Sidebar -->
+      <div class="sidebar-profile-box">
+        <div class="sidebar-profile-avatar">
+          <i data-lucide="user-check"></i>
+        </div>
+        <div class="sidebar-profile-info">
+          <h4 id="sideAdvocateName" class="sidebar-user-name">Adv. Rajesh Sharma</h4>
+          <span id="sideBarId" class="sidebar-bar-id">Bar ID: D/1428/2015 [DEMO]</span>
+        </div>
+      </div>
+
+      <!-- Sidebar Navigation Menu -->
+      <nav class="sidebar-nav-menu">
+        <a href="#overview" class="sidebar-nav-item active" data-module="module-overview">
+          <i data-lucide="layout-dashboard"></i>
+          <span class="nav-label">Overview Dashboard</span>
+        </a>
+
+        <a href="#cases" class="sidebar-nav-item" data-module="module-cases">
+          <i data-lucide="folder-git-2"></i>
+          <span class="nav-label">Case Management</span>
+        </a>
+
+        <a href="#clients" class="sidebar-nav-item" data-module="module-clients">
+          <i data-lucide="users"></i>
+          <span class="nav-label">Client Management</span>
+        </a>
+
+        <a href="#calendar" class="sidebar-nav-item" data-module="module-calendar">
+          <i data-lucide="calendar"></i>
+          <span class="nav-label">Court Calendar</span>
+        </a>
+
+        <a href="#documents" class="sidebar-nav-item" data-module="module-documents">
+          <i data-lucide="file-text"></i>
+          <span class="nav-label">Document Vault</span>
+        </a>
+
+        <a href="#notifications" class="sidebar-nav-item" data-module="module-notifications">
+          <i data-lucide="bell"></i>
+          <span class="nav-label">Reminders & Alerts</span>
+        </a>
+
+        <a href="#settings" class="sidebar-nav-item" data-module="module-profile">
+          <i data-lucide="settings"></i>
+          <span class="nav-label">Chamber Settings</span>
+        </a>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-demo-badge">
+          <i data-lucide="shield-alert"></i>
+          <span>Academic Prototype</span>
+        </div>
+        <button class="sidebar-logout-btn" data-action="logout">
+          <i data-lucide="log-out"></i>
+          <span>Exit Workspace</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ====================================================================
+         MAIN CONTENT AREA
+         ==================================================================== -->
+    <div class="dashboard-main-area">
+      <!-- Top Navbar -->
+      <header class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button id="sidebarToggleBtn" class="mobile-toggle-btn" aria-label="Toggle Navigation Sidebar">
+            <i data-lucide="menu"></i>
+          </button>
+          <h2 id="currentModuleTitle" class="topbar-title">Overview Dashboard</h2>
+        </div>
+
+        <div class="topbar-actions">
+          <!-- Court Session Indicator -->
+          <div class="court-status-pill">
+            <span class="pulse-dot"></span>
+            <span>Delhi HC • In Session</span>
+          </div>
+
+          <!-- Notification Trigger -->
+          <a href="#notifications" class="topbar-icon-btn" onclick="document.querySelector('[data-module=\'module-notifications\']').click()" title="Notifications">
+            <i data-lucide="bell"></i>
+            <span id="topNavNotifBadge" class="notif-counter">2</span>
+          </a>
+
+          <!-- Citizen Portal Switcher Link -->
+          <a href="citizen.html" class="btn btn-outline btn-sm" title="View Citizen Legal Portal">
+            <i data-lucide="external-link"></i>
+            <span>Citizen Portal</span>
+          </a>
+
+          <!-- User Badge -->
+          <div class="topbar-user">
+            <div class="topbar-avatar">RS</div>
+            <span id="topAdvocateName" class="topbar-name">Adv. Rajesh Sharma</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Workspace Views Container -->
+      <main class="dashboard-content-box">
+
+        <!-- ================================================================
+             MODULE 1: OVERVIEW DASHBOARD
+             ================================================================ -->
+        <section id="module-overview" class="dashboard-module active">
+          <!-- Top Row Stat Cards -->
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-icon-wrap navy">
+                <i data-lucide="folder-check"></i>
+              </div>
+              <div class="metric-data">
+                <span class="metric-label">Total Cases</span>
+                <h3 id="statTotalCases" class="metric-value">6</h3>
+                <span class="metric-sub">District & High Courts</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-wrap gold">
+                <i data-lucide="activity"></i>
+              </div>
+              <div class="metric-data">
+                <span class="metric-label">Active Matters</span>
+                <h3 id="statActiveCases" class="metric-value">4</h3>
+                <span class="metric-sub text-gold">Under Active Trial</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-wrap info">
+                <i data-lucide="users"></i>
+              </div>
+              <div class="metric-data">
+                <span class="metric-label">Total Clients</span>
+                <h3 id="statTotalClients" class="metric-value">5</h3>
+                <span class="metric-sub">Corporate & Individual</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-wrap green">
+                <i data-lucide="calendar"></i>
+              </div>
+              <div class="metric-data">
+                <span class="metric-label">Hearings Scheduled</span>
+                <h3 id="statUpcomingHearings" class="metric-value">5</h3>
+                <span class="metric-sub">This Month</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-wrap danger">
+                <i data-lucide="clock"></i>
+              </div>
+              <div class="metric-data">
+                <span class="metric-label">Pending Deadlines</span>
+                <h3 id="statPendingDeadlines" class="metric-value">1</h3>
+                <span class="metric-sub" style="color: #ef4444;">Limitation Warning</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cause List Docket & Quick Actions Split -->
+          <div class="overview-split-grid">
+            <!-- Cause List Table -->
+            <div class="panel-card">
+              <div class="panel-header">
+                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                  <i data-lucide="gavel" style="color: var(--gold-600);"></i>
+                  <h3 class="panel-title">Today's Listed Hearings & Cause List</h3>
+                </div>
+                <button class="btn btn-sm btn-outline" onclick="document.querySelector('[data-module=\'module-calendar\']').click()">
+                  <span>Full Diary</span>
+                  <i data-lucide="arrow-right"></i>
+                </button>
+              </div>
+
+              <div class="table-responsive">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Matter / Item</th>
+                      <th>Court & Bench</th>
+                      <th>Stage</th>
+                      <th>Time</th>
+                      <th>Type</th>
+                    </tr>
+                  </thead>
+                  <tbody id="todayCauseListBody">
+                    <!-- Populated by JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Practice Fast Actions & BNS Assistant -->
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+              <div class="panel-card">
+                <div class="panel-header">
+                  <h3 class="panel-title">Quick Chamber Actions</h3>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                  <button id="btnQuickAddCase" class="btn btn-navy btn-sm" onclick="document.getElementById('btnOpenAddCase').click()" style="justify-content: flex-start;">
+                    <i data-lucide="plus-circle"></i>
+                    <span>Register New Court Matter</span>
+                  </button>
+                  <button id="btnQuickAddClient" class="btn btn-outline btn-sm" onclick="document.getElementById('btnOpenAddClient').click()" style="justify-content: flex-start;">
+                    <i data-lucide="user-plus"></i>
+                    <span>Add New Client Dossier</span>
+                  </button>
+                  <button id="btnQuickUploadDoc" class="btn btn-outline btn-sm" onclick="document.getElementById('btnOpenUploadDoc').click()" style="justify-content: flex-start;">
+                    <i data-lucide="upload-cloud"></i>
+                    <span>Upload Case Document</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Indian Statutory Quick Lookup Card -->
+              <div class="panel-card" style="background: linear-gradient(135deg, var(--navy-950) 0%, var(--navy-900) 100%); color: #ffffff;">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem;">
+                  <i data-lucide="book-open" style="color: var(--gold-400);"></i>
+                  <h4 style="font-size: 0.95rem; font-weight: 700; color: #ffffff;">BNS 2023 Statutory Library</h4>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-light); line-height: 1.5; margin-bottom: 1rem;">
+                  Quick reference table mapping legacy Indian Penal Code (IPC) sections to the newly codified Bharatiya Nyaya Sanhita (BNS) provisions.
+                </p>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                  <span class="badge-tag" style="background: rgba(255,255,255,0.1); color: var(--gold-300);">Sec 302 IPC &rarr; Sec 103 BNS</span>
+                  <span class="badge-tag" style="background: rgba(255,255,255,0.1); color: var(--gold-300);">Sec 420 IPC &rarr; Sec 318 BNS</span>
+                  <span class="badge-tag" style="background: rgba(255,255,255,0.1); color: var(--gold-300);">Sec 376 IPC &rarr; Sec 64 BNS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 2: CASE MANAGEMENT
+             ================================================================ -->
+        <section id="module-cases" class="dashboard-module">
+          <div class="panel-card">
+            <!-- Filter Bar -->
+            <div class="table-actions-bar">
+              <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; flex-grow: 1;">
+                <div class="search-box">
+                  <i data-lucide="search"></i>
+                  <input type="text" id="casesSearchInput" placeholder="Search by case no, CNR, client, court..." class="form-control">
+                </div>
+
+                <select id="casesFilterStatus" class="form-control" style="width: auto; min-width: 170px;">
+                  <option value="all">All Case Statuses</option>
+                  <option value="Active">Active</option>
+                  <option value="Listed">Listed</option>
+                  <option value="Adjourned">Adjourned</option>
+                  <option value="Reserved for Orders">Reserved for Orders</option>
+                </select>
+              </div>
+
+              <button id="btnOpenAddCase" class="btn btn-primary btn-sm">
+                <i data-lucide="plus"></i>
+                <span>Add New Case</span>
+              </button>
+            </div>
+
+            <!-- Cases Table -->
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Case / CNR Number</th>
+                    <th>Court & Bench</th>
+                    <th>Type</th>
+                    <th>Client Name</th>
+                    <th>Status</th>
+                    <th>Next Hearing</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="casesTableBody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 3: CLIENT MANAGEMENT
+             ================================================================ -->
+        <section id="module-clients" class="dashboard-module">
+          <div class="panel-card">
+            <div class="table-actions-bar">
+              <div class="search-box" style="max-width: 380px;">
+                <i data-lucide="search"></i>
+                <input type="text" id="clientsSearchInput" placeholder="Search clients by name, email, phone..." class="form-control">
+              </div>
+
+              <button id="btnOpenAddClient" class="btn btn-primary btn-sm">
+                <i data-lucide="user-plus"></i>
+                <span>Add New Client</span>
+              </button>
+            </div>
+
+            <!-- Client Cards Grid -->
+            <div id="clientsListGrid" class="clients-grid">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 4: CALENDAR & COURT SCHEDULE
+             ================================================================ -->
+        <section id="module-calendar" class="dashboard-module">
+          <div class="calendar-layout-grid">
+            <!-- Calendar Grid Card -->
+            <div class="panel-card">
+              <div class="calendar-controls">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <button id="calPrevMonth" class="btn btn-outline btn-sm" aria-label="Previous Month">
+                    <i data-lucide="chevron-left"></i>
+                  </button>
+                  <h3 id="calendarMonthYear" class="calendar-month-title">November 2026</h3>
+                  <button id="calNextMonth" class="btn btn-outline btn-sm" aria-label="Next Month">
+                    <i data-lucide="chevron-right"></i>
+                  </button>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                  <button id="calTodayBtn" class="btn btn-outline btn-sm">Today</button>
+                  <button id="btnOpenScheduleModal" class="btn btn-navy btn-sm">
+                    <i data-lucide="plus"></i>
+                    <span>Schedule Hearing</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Day of Week Headers -->
+              <div class="calendar-week-headers">
+                <span>Sun</span>
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+              </div>
+
+              <!-- Calendar 35/42 Days Grid -->
+              <div id="calendarGridDays" class="calendar-days-grid">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Schedule List Details Pane -->
+            <div class="panel-card">
+              <div class="panel-header">
+                <h4 id="selectedDateHeader" class="panel-title" style="font-size: 1.05rem;">Upcoming Court Hearings</h4>
+              </div>
+
+              <div id="calendarEventsList" class="schedule-events-scroll">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 5: DOCUMENT MANAGEMENT
+             ================================================================ -->
+        <section id="module-documents" class="dashboard-module">
+          <div class="panel-card">
+            <div class="table-actions-bar">
+              <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                <label for="docFilterCase" style="font-size: 0.85rem; font-weight: 600; color: var(--navy-950);">Filter by Case:</label>
+                <select id="docFilterCase" class="form-control" style="width: auto; min-width: 220px;">
+                  <option value="all">All Matters & Pleadings</option>
+                  <!-- Populated by JS -->
+                </select>
+              </div>
+
+              <button id="btnOpenUploadDoc" class="btn btn-primary btn-sm">
+                <i data-lucide="upload-cloud"></i>
+                <span>Upload Case Document</span>
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Document Name</th>
+                    <th>Associated Case</th>
+                    <th>Category</th>
+                    <th>Upload Date</th>
+                    <th>File Size</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="documentsTableBody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 6: NOTIFICATIONS & REMINDERS
+             ================================================================ -->
+        <section id="module-notifications" class="dashboard-module">
+          <div class="panel-card" style="max-width: 880px; margin: 0 auto;">
+            <div class="panel-header">
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <i data-lucide="bell-ring" style="color: var(--gold-600);"></i>
+                <h3 class="panel-title">Chamber Hearing & Deadline Reminders</h3>
+              </div>
+              <button id="markAllNotifsReadBtn" class="btn btn-outline btn-sm">
+                <i data-lucide="check-check"></i>
+                <span>Mark All Read</span>
+              </button>
+            </div>
+
+            <div id="notificationsFullList" style="display: flex; flex-direction: column; gap: 1rem;">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             MODULE 7: PROFILE & CHAMBER SETTINGS
+             ================================================================ -->
+        <section id="module-profile" class="dashboard-module">
+          <div class="panel-card" style="max-width: 820px; margin: 0 auto;">
+            <div class="panel-header">
+              <h3 class="panel-title">Advocate Chamber Profile & Credentials</h3>
+              <span class="status-badge status-pending">DEMO ENVIRONMENT</span>
+            </div>
+
+            <form id="profileSettingsForm">
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="profName" class="form-label">Full Name & Title *</label>
+                  <input type="text" id="profName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="profBarId" class="form-label">Bar Council Enrollment ID *</label>
+                  <input type="text" id="profBarId" class="form-control" required>
+                </div>
+              </div>
+
+              <!-- Explicit Simulated Verification Warning -->
+              <div class="simulated-status-pill" style="margin-bottom: 1.25rem;">
+                <i data-lucide="alert-circle"></i>
+                <span>Verification Status: <strong>DEMO / NOT OFFICIALLY VERIFIED</strong> (Bar Council enrollment ID simulated for academic prototype).</span>
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="profEmail" class="form-label">Chamber Email *</label>
+                  <input type="email" id="profEmail" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="profPhone" class="form-label">Contact Phone *</label>
+                  <input type="tel" id="profPhone" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="profCouncil" class="form-label">State Bar Council</label>
+                  <select id="profCouncil" class="form-control">
+                    <option value="Bar Council of Delhi">Bar Council of Delhi</option>
+                    <option value="Bar Council of Maharashtra & Goa">Bar Council of Maharashtra & Goa</option>
+                    <option value="Bar Council of Punjab & Haryana">Bar Council of Punjab & Haryana</option>
+                    <option value="Bar Council of Karnataka">Bar Council of Karnataka</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="profPrimaryCourt" class="form-label">Primary Court Jurisdiction</label>
+                  <input type="text" id="profPrimaryCourt" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="profChamber" class="form-label">Chamber Address / Office Location</label>
+                <textarea id="profChamber" class="form-control" style="min-height: 80px;"></textarea>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                <button type="submit" class="btn btn-navy">
+                  <i data-lucide="save"></i>
+                  <span>Save Chamber Profile</span>
+                </button>
+
+                <button type="button" id="btnResetDemoData" class="btn btn-outline" style="color: #ef4444; border-color: #fca5a5;">
+                  <i data-lucide="rotate-ccw"></i>
+                  <span>Reset All Demo Data</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODALS
+       ======================================================================== -->
+
+  <!-- 1. ADD / EDIT CASE MODAL -->
+  <div id="caseModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card" style="max-width: 680px;">
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <h3 id="caseModalTitle">Add New Court Matter</h3>
+          <p>Register a case under chamber practice records</p>
+        </div>
+        <button id="btnCloseCaseModal" class="modal-close-btn" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="caseForm">
+          <input type="hidden" id="caseModalId" value="">
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="caseNumber" class="form-label">Case / Suit Number *</label>
+              <input type="text" id="caseNumber" class="form-control" placeholder="e.g. CS(COMM) 512/2024" required>
+            </div>
+            <div class="form-group">
+              <label for="caseCnr" class="form-label">e-Courts CNR Number</label>
+              <input type="text" id="caseCnr" class="form-control" placeholder="e.g. DLDH01-004521-2024">
+            </div>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="caseCourtName" class="form-label">Court Establishment *</label>
+              <input type="text" id="caseCourtName" class="form-control" placeholder="e.g. High Court of Delhi" required>
+            </div>
+            <div class="form-group">
+              <label for="caseCourtBench" class="form-label">Bench / Court Room</label>
+              <input type="text" id="caseCourtBench" class="form-control" placeholder="e.g. Court Room 04, Single Bench">
+            </div>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="caseType" class="form-label">Case Classification *</label>
+              <select id="caseType" class="form-control">
+                <option value="Commercial Suit">Commercial Suit</option>
+                <option value="Criminal Bail (BNS)">Criminal Bail (BNS)</option>
+                <option value="Arbitration Petition">Arbitration Petition</option>
+                <option value="Civil Partition Suit">Civil Partition Suit</option>
+                <option value="Writ Petition (Civil)">Writ Petition (Civil)</option>
+                <option value="RERA Complaint">RERA Complaint</option>
+                <option value="Consumer Appeal">Consumer Appeal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="caseStatus" class="form-label">Case Status</label>
+              <select id="caseStatus" class="form-control">
+                <option value="Active">Active</option>
+                <option value="Listed">Listed</option>
+                <option value="Adjourned">Adjourned</option>
+                <option value="Reserved for Orders">Reserved for Orders</option>
+                <option value="Disposed">Disposed</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="caseClientName" class="form-label">Client Name *</label>
+              <select id="caseClientName" class="form-control">
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="caseOpposing" class="form-label">Opposing Party Name</label>
+              <input type="text" id="caseOpposing" class="form-control" placeholder="e.g. Union of India / Company Ltd.">
+            </div>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="caseNextHearing" class="form-label">Next Hearing Date *</label>
+              <input type="date" id="caseNextHearing" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="caseStage" class="form-label">Hearing Stage</label>
+              <input type="text" id="caseStage" class="form-control" placeholder="e.g. Final Arguments / Evidence">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="caseDescription" class="form-label">Matter Brief / Remarks</label>
+            <textarea id="caseDescription" class="form-control" placeholder="Key facts, limitation deadlines, or chamber notes..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-navy" style="width: 100%;">
+            <span>Save Case Record</span>
+            <i data-lucide="check"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ADD / EDIT CLIENT MODAL -->
+  <div id="clientModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <h3 id="clientModalTitle">Add New Client</h3>
+          <p>Register client record and contact details</p>
+        </div>
+        <button id="btnCloseClientModal" class="modal-close-btn" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="clientForm">
+          <input type="hidden" id="clientModalId" value="">
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="clientName" class="form-label">Client Full Name *</label>
+              <input type="text" id="clientName" class="form-control" placeholder="Mr. Rajesh Mehra" required>
+            </div>
+            <div class="form-group">
+              <label for="clientType" class="form-label">Client Classification</label>
+              <select id="clientType" class="form-control">
+                <option value="Individual">Individual</option>
+                <option value="Corporate">Corporate / Enterprise</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="clientEmail" class="form-label">Email Address *</label>
+              <input type="email" id="clientEmail" class="form-control" placeholder="client@domain.com" required>
+            </div>
+            <div class="form-group">
+              <label for="clientPhone" class="form-label">Phone Number *</label>
+              <input type="tel" id="clientPhone" class="form-control" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="clientAddress" class="form-label">Postal / Chamber Address</label>
+            <textarea id="clientAddress" class="form-control" placeholder="Registered address..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="clientStatus" class="form-label">Status</label>
+            <select id="clientStatus" class="form-control">
+              <option value="Active">Active</option>
+              <option value="Pending">Pending</option>
+              <option value="Inactive">Inactive</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-navy" style="width: 100%;">
+            <span>Save Client Dossier</span>
+            <i data-lucide="check"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SCHEDULE HEARING MODAL -->
+  <div id="scheduleModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <h3>Schedule Court Appearance</h3>
+          <p>Add a hearing or limitation deadline to the diary</p>
+        </div>
+        <button id="btnCloseScheduleModal" class="modal-close-btn" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="scheduleForm">
+          <div class="form-group">
+            <label for="schedCaseNumber" class="form-label">Case Number *</label>
+            <input type="text" id="schedCaseNumber" class="form-control" placeholder="e.g. CS(COMM) 412/2024" required>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="schedCourtName" class="form-label">Court Name *</label>
+              <input type="text" id="schedCourtName" class="form-control" placeholder="e.g. High Court of Delhi" required>
+            </div>
+            <div class="form-group">
+              <label for="schedLocation" class="form-label">Room / Location</label>
+              <input type="text" id="schedLocation" class="form-control" placeholder="e.g. Court Room 04">
+            </div>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="schedDate" class="form-label">Date *</label>
+              <input type="date" id="schedDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="schedTime" class="form-label">Time *</label>
+              <input type="text" id="schedTime" class="form-control" placeholder="10:30 AM" required>
+            </div>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="schedStage" class="form-label">Hearing Stage</label>
+              <input type="text" id="schedStage" class="form-control" placeholder="e.g. Final Arguments">
+            </div>
+            <div class="form-group">
+              <label for="schedType" class="form-label">Event Type</label>
+              <select id="schedType" class="form-control">
+                <option value="Court Hearing">Court Hearing</option>
+                <option value="Client Meeting">Client Meeting</option>
+                <option value="Filing Deadline">Filing Deadline</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-navy" style="width: 100%;">
+            <span>Add to Court Schedule</span>
+            <i data-lucide="calendar-plus"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. UPLOAD DOCUMENT MODAL -->
+  <div id="uploadDocModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <h3>Upload Case Document</h3>
+          <p>Add a pleading, affidavit, or evidence bundle</p>
+        </div>
+        <button id="btnCloseDocModal" class="modal-close-btn" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="uploadDocForm">
+          <div class="form-group">
+            <label for="uploadDocTitle" class="form-label">Document Title *</label>
+            <input type="text" id="uploadDocTitle" class="form-control" placeholder="e.g. Written_Statement_Final.pdf" required>
+          </div>
+
+          <div class="form-group">
+            <label for="uploadDocCase" class="form-label">Associate with Matter *</label>
+            <select id="uploadDocCase" class="form-control" required>
+              <!-- Populated by JS -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="uploadDocCategory" class="form-label">Document Classification</label>
+            <select id="uploadDocCategory" class="form-control">
+              <option value="Pleadings & Vakalatnama">Pleadings & Vakalatnama</option>
+              <option value="Plaint / Petition">Plaint / Petition</option>
+              <option value="Applications">Applications</option>
+              <option value="Criminal Pleadings">Criminal Pleadings</option>
+              <option value="Evidence Bundle">Evidence Bundle</option>
+              <option value="Orders & Judgments">Orders & Judgments</option>
+            </select>
+          </div>
+
+          <div style="border: 2px dashed var(--border-medium); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; margin-bottom: 1.25rem; background: var(--bg-secondary);">
+            <i data-lucide="upload-cloud" style="width: 32px; height: 32px; color: var(--navy-700); margin: 0 auto 0.5rem auto;"></i>
+            <div style="font-size: 0.85rem; font-weight: 600; color: var(--navy-950);">Click to browse or drag file here</div>
+            <div style="font-size: 0.75rem; color: #64748b;">Simulated PDF upload for academic prototype</div>
+          </div>
+
+          <button type="submit" class="btn btn-navy" style="width: 100%;">
+            <span>Upload to Case Repository</span>
+            <i data-lucide="check"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Store & Lawyer Scripts -->
+  <script src="js/store.js"></script>
+  <script src="js/lawyer.js"></script>
+</body>
+</html>
