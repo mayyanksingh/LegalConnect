@@ -3,65 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=frontend/index.html">
-  <title>LegalConnect | AI-Powered Legal Practice Management & Assistance System</title>
+  <meta name="description" content="LegalConnect - Modern AI-Powered Legal Practice Management & Assistance System. Choose your role to continue.">
+  <title>Welcome to LegalConnect | Your Legal Journey, Simplified</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="frontend/assets/favicon.svg">
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background-color: #060d1d;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      text-align: center;
-      padding: 1.5rem;
-    }
-    .redirect-card {
-      background: #0b1528;
-      border: 1px solid rgba(212, 175, 81, 0.3);
-      border-radius: 16px;
-      padding: 2.5rem;
-      max-width: 480px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
-    h1 {
-      color: #d4af51;
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      color: #94a3b8;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-    a.btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #d4af51 0%, #c5a039 100%);
-      color: #060d1d;
-      padding: 0.8rem 1.8rem;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: transform 0.2s;
-    }
-    a.btn:hover {
-      transform: translateY(-2px);
-    }
-  </style>
-  <script>
-    // Immediate JavaScript redirection to frontend portal
-    window.location.replace("frontend/index.html");
-  </script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="frontend/css/style.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
-  <div class="redirect-card">
-    <h1>LegalConnect</h1>
-    <p>Opening LegalConnect Legal Practice Management & Assistance System...</p>
-    <a href="frontend/index.html" class="btn">Enter LegalConnect Portal</a>
-  </div>
+<body class="welcome-page-body">
+
+  <!-- ========================================================================
+       Top Navigation Bar
+       ======================================================================== -->
+  <header class="welcome-navbar" role="banner">
+    <div class="container">
+      <a href="index.html" class="welcome-brand-logo" aria-label="LegalConnect Home">
+        <div class="welcome-brand-emblem" aria-hidden="true">
+          <i data-lucide="scale"></i>
+        </div>
+        <span>Legal<span class="purple-accent">Connect</span></span>
+      </a>
+
+      <div class="welcome-header-pill">
+        <i data-lucide="shield-check" style="width: 14px; height: 14px;"></i>
+        <span>Legal Technology Platform</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Welcome & Role Selection Screen
+       ======================================================================== -->
+  <main class="welcome-main-wrap" role="main">
+    <div class="container" style="max-width: 1040px;">
+      
+      <!-- Center Welcome Hero -->
+      <section class="welcome-hero-box" aria-labelledby="welcomeTitle">
+        <div class="welcome-badge-pill">
+          <i data-lucide="sparkles"></i>
+          <span>Welcome Experience</span>
+        </div>
+
+        <h1 id="welcomeTitle" class="welcome-main-title">
+          Welcome to <span class="gradient-purple">LegalConnect</span>
+        </h1>
+
+        <p class="welcome-subtitle">
+          Your Legal Journey, Simplified.
+        </p>
+
+        <p class="welcome-supporting-text">
+          Choose how you would like to continue.
+        </p>
+      </section>
+
+      <!-- Two Prominent Role Cards -->
+      <section class="welcome-role-grid" aria-label="Select your role">
+        
+        <!-- CARD 1 – CITIZEN -->
+        <article class="entry-role-card citizen" aria-labelledby="citizenRoleTitle">
+          <div class="card-top-header">
+            <div class="entry-icon-box" aria-hidden="true">
+              <i data-lucide="user"></i>
+            </div>
+            <span class="card-role-pill">Public Access</span>
+          </div>
+
+          <h2 id="citizenRoleTitle" class="entry-card-title">
+            Continue as Citizen
+          </h2>
+
+          <p class="entry-card-desc">
+            Explore legal information, find lawyers, and get assistance with your legal questions.
+          </p>
+
+          <div class="entry-features-list">
+            <div class="entry-feature-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>AI Legal Assistant for Indian Law & BNS</span>
+            </div>
+            <div class="entry-feature-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>Directory of Verified Practicing Advocates</span>
+            </div>
+            <div class="entry-feature-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>Plain-Language Legal Resources & Guides</span>
+            </div>
+          </div>
+
+          <a href="frontend/citizen.html" class="btn-enter-citizen" id="btnEnterCitizen" aria-label="Enter as Citizen to public legal assistance portal">
+            <span>Enter as Citizen</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </article>
+
+        <!-- CARD 2 – LAWYER -->
+        <article class="entry-role-card lawyer" aria-labelledby="lawyerRoleTitle">
+          <div class="card-top-header">
+            <div class="entry-icon-box" aria-hidden="true">
+              <i data-lucide="scale"></i>
+            </div>
+            <span class="card-role-pill">Advocate Portal</span>
+          </div>
+
+          <h2 id="lawyerRoleTitle" class="entry-card-title">
+            Continue as Lawyer
+          </h2>
+
+          <p class="entry-card-desc">
+            Manage your clients, cases, documents, hearings, and legal practice.
+          </p>
+
+          <div class="entry-features-list">
+            <div class="entry-feature-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>Case Dockets, CNR & e-Courts Tracking</span>
+            </div>
+            <div class="entry-feature-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>Court Hearing Calendar & Daily Cause Lists</span>
+            </div>
+            <div class="entry-feature-item">
+              <i data-lucide="check-circle-2"></i>
+              <span>Client Dossiers & Encrypted Document Vault</span>
+            </div>
+          </div>
+
+          <a href="frontend/lawyer-auth.html" class="btn-enter-lawyer" id="btnEnterLawyer" aria-label="Enter as Lawyer to practice management authentication">
+            <span>Enter as Lawyer</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </article>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       Subtle Minimal Footer
+       ======================================================================== -->
+  <footer class="welcome-footer" role="contentinfo">
+    <div class="container" style="max-width: 1040px;">
+      <div>
+        &copy; 2026 LegalConnect. All rights reserved. &bull; Academic Prototype
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem;">
+        <i data-lucide="lock" style="width: 14px; height: 14px; color: #7c3aed;"></i>
+        <span>Encrypted Legal-Tech Architecture</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
 </body>
 </html>

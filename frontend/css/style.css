@@ -3808,3 +3808,405 @@ textarea.form-control {
     display: none;
   }
 }
+
+/* ==========================================================================
+   PURPLE/VIOLET MODERN ROLE SELECTION ENTRY EXPERIENCE
+   Clean White Background, Soft Shadows, Vibrant Purple/Violet Accents
+   ========================================================================== */
+
+.welcome-page-body {
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.05) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(circle at 85% 20%, rgba(99, 102, 241, 0.04) 0%, rgba(255, 255, 255, 0) 50%);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: var(--font-sans);
+  color: #0f172a;
+}
+
+.welcome-navbar {
+  height: 76px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #ede9fe;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.welcome-navbar .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.welcome-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.welcome-brand-emblem {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+}
+
+.welcome-brand-emblem svg {
+  width: 22px;
+  height: 22px;
+}
+
+.welcome-brand-logo span.purple-accent {
+  color: #7c3aed;
+}
+
+.welcome-header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #7c3aed;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+}
+
+.welcome-main-wrap {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3.5rem 1.5rem 4rem 1.5rem;
+}
+
+.welcome-hero-box {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 2.75rem auto;
+}
+
+.welcome-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  border-radius: 9999px;
+  color: #7c3aed;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-badge-pill svg {
+  width: 14px;
+  height: 14px;
+}
+
+.welcome-main-title {
+  font-family: var(--font-sans);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.welcome-main-title .gradient-purple {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.welcome-subtitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #7c3aed;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.015em;
+}
+
+.welcome-supporting-text {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.welcome-role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.25rem;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.entry-role-card {
+  background: #ffffff;
+  border: 1.5px solid #ede9fe;
+  border-radius: 22px;
+  padding: 2.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -5px rgba(124, 58, 237, 0.06), 0 2px 6px rgba(15, 23, 42, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.entry-role-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transition: all 0.25s ease;
+}
+
+.entry-role-card.citizen::before {
+  background: linear-gradient(90deg, #7c3aed 0%, #6366f1 100%);
+}
+
+.entry-role-card.lawyer::before {
+  background: linear-gradient(90deg, #5b21b6 0%, #4338ca 100%);
+}
+
+.entry-role-card:hover {
+  transform: translateY(-6px);
+  border-color: #8b5cf6;
+  box-shadow: 0 20px 45px -8px rgba(124, 58, 237, 0.16), 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.card-top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.entry-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.entry-role-card.citizen .entry-icon-box {
+  background: #f5f3ff;
+  color: #7c3aed;
+  border: 1px solid #ddd6fe;
+}
+
+.entry-role-card.lawyer .entry-icon-box {
+  background: #ede9fe;
+  color: #5b21b6;
+  border: 1px solid #c4b5fd;
+}
+
+.entry-icon-box svg {
+  width: 28px;
+  height: 28px;
+}
+
+.entry-role-card:hover .entry-icon-box {
+  transform: scale(1.08);
+}
+
+.card-role-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.entry-role-card.citizen .card-role-pill {
+  background: #f5f3ff;
+  color: #7c3aed;
+  border: 1px solid #ddd6fe;
+}
+
+.entry-role-card.lawyer .card-role-pill {
+  background: #ede9fe;
+  color: #5b21b6;
+  border: 1px solid #c4b5fd;
+}
+
+.entry-card-title {
+  font-family: var(--font-sans);
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.015em;
+}
+
+.entry-card-desc {
+  font-size: 0.98rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.entry-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 2.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.entry-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.entry-feature-item svg {
+  width: 16px;
+  height: 16px;
+  color: #7c3aed;
+  min-width: 16px;
+}
+
+.btn-enter-citizen {
+  background: linear-gradient(135deg, #7c3aed 0%, #6366f1 100%);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 0.95rem 1.75rem;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.28);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  transition: all 0.22s ease;
+  text-decoration: none;
+}
+
+.btn-enter-citizen:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(124, 58, 237, 0.38);
+  filter: brightness(1.04);
+  color: #ffffff;
+}
+
+.btn-enter-citizen:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-enter-citizen svg {
+  transition: transform 0.2s ease;
+  width: 18px;
+  height: 18px;
+}
+
+.btn-enter-lawyer {
+  background: linear-gradient(135deg, #5b21b6 0%, #4338ca 100%);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 0.95rem 1.75rem;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 14px rgba(91, 33, 182, 0.28);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  transition: all 0.22s ease;
+  text-decoration: none;
+}
+
+.btn-enter-lawyer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(91, 33, 182, 0.38);
+  filter: brightness(1.04);
+  color: #ffffff;
+}
+
+.btn-enter-lawyer:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-enter-lawyer svg {
+  transition: transform 0.2s ease;
+  width: 18px;
+  height: 18px;
+}
+
+.welcome-footer {
+  padding: 1.5rem 0;
+  border-top: 1px solid #ede9fe;
+  background: #ffffff;
+  text-align: center;
+  font-size: 0.825rem;
+  color: #64748b;
+}
+
+.welcome-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .welcome-role-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+
+  .welcome-main-title {
+    font-size: 2.35rem;
+  }
+
+  .welcome-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .welcome-footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
